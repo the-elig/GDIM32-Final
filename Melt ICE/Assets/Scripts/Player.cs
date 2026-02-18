@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float _moveSpeed = 3.0f;
     [SerializeField] private float _turnSpeed = 3.0f;
     [SerializeField] private float _mouseSensitivity;
+    [SerializeField] private float _interactDistance = 3.0f;
+
+    [SerializeField] private GameObject TEMP_UI;
 
     // camera member variables
     private Transform _cameraTrans;
@@ -42,6 +45,30 @@ public class Player : MonoBehaviour
         transform.Translate(0, 0, forwardbackwards);
         transform.Translate(leftright, 0, 0);
 
-        
+
+        // raycast interact distance
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, _interactDistance))
+        {
+            if (hit.collider.gameObject.CompareTag("Interactable"))
+            {
+                TEMP_UI.SetActive(true);
+            }
+            else
+            {
+                TEMP_UI.SetActive(false);
+            }
+        }
+        else
+        {
+            TEMP_UI.SetActive(false);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward * _interactDistance);
     }
 }
