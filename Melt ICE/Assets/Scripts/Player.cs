@@ -6,14 +6,33 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 3.0f;
     [SerializeField] private float _turnSpeed = 3.0f;
+    [SerializeField] private float _mouseSensitivity;
+
+    private Transform _cameraTrans;
+
+    private float _rotationX;
+    private float _rotationY;
 
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        _cameraTrans = Camera.main.transform;
     }
 
     void Update()
     {
+        // camera follows mouse
+        float mouseY = Input.GetAxis("Mouse Y");
+        _rotationY += mouseY * _mouseSensitivity;
+        _rotationY = Mathf.Clamp(_rotationY, -60.0f, 60.0f);
+
+        float mouseX = Input.GetAxis("Mouse X");
+        _rotationX += mouseX * _mouseSensitivity;
+
+        _cameraTrans.localEulerAngles = new Vector3(-_rotationY, 0, 0);
+        transform.localEulerAngles = new Vector3(0, _rotationX, 0);
+
+
         // player movement
         float forwardbackwards = Input.GetAxis("Vertical") * _moveSpeed * Time.deltaTime;
         float leftright = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
@@ -21,6 +40,6 @@ public class Player : MonoBehaviour
         transform.Translate(0, 0, forwardbackwards);
         transform.Translate(leftright, 0, 0);
 
-        // still need to do camera rotation (following mouse, which idk how to do yet lmao)
+        
     }
 }
