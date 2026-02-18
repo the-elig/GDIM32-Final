@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
         _cameraTrans = Camera.main.transform; // grabs Camera game object
     }
 
+    // create an event delegate saying you are looking at an interactable object
+
     void Update()
     {
         // camera follows mouse
