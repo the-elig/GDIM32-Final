@@ -8,15 +8,15 @@ public class Player : MonoBehaviour
     [SerializeField] private float _turnSpeed = 3.0f;
     [SerializeField] private float _mouseSensitivity;
 
+    // camera member variables
     private Transform _cameraTrans;
-
     private float _rotationX;
     private float _rotationY;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        _cameraTrans = Camera.main.transform;
+        _cameraTrans = Camera.main.transform; // grabs Camera game object
     }
 
     void Update()
