@@ -13,7 +13,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject TEMP_UI;
 
-    
+    //the singleton
+    public static Player Instance {get; private set;}
+
 
     // camera member variables
     private Transform _cameraTrans;
@@ -21,6 +23,17 @@ public class Player : MonoBehaviour
     private float _rotationY;
     
 
+    void Awake()
+    {
+        if(Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+
+        GameObject thePlayer = GameObject.FindWithTag("Player");
+    }
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
