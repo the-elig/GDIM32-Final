@@ -2114,8 +2114,6 @@ MonoBehaviour:
   _turnSpeed: 3
   _mouseSensitivity: 3
   _interactDistance: 3
-  _interactRadius: 3
-  _raycastOffset: {x: 0, y: 0, z: 0}
   TEMP_UI: {fileID: 1897438930}
 --- !u!1 &700823269
 GameObject:
@@ -4847,6 +4845,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 641a139d256a9454798886eaadab919d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1580916748}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 641a139d256a9454798886eaadab919d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1580916751}
   m_SourcePrefab: {fileID: 100100000, guid: 641a139d256a9454798886eaadab919d, type: 3}
 --- !u!4 &1580916745 stripped
 Transform:
@@ -4874,6 +4875,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.18456316, y: 0.17703348, z: 0.18929958}
   m_Center: {x: 0.00000071525574, y: 0.08851656, z: 0}
+--- !u!114 &1580916751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590294186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66e8444760c0474da313dd54f729f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 
+  isCollected: 0
 --- !u!1001 &1582475627
 PrefabInstance:
   m_ObjectHideFlags: 0
