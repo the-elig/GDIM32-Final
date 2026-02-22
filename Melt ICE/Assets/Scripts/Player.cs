@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // event delegates and events
     public delegate void InterDelegate(Interactable i);
     public event InterDelegate Interacted;
 
@@ -17,9 +18,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject TEMP_UI;
 
-    //the singleton
-    public static Player Instance {get; private set;}
-
 
     // camera member variables
     private Transform _cameraTrans;
@@ -27,25 +25,12 @@ public class Player : MonoBehaviour
     private float _rotationY;
     
 
-    void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
-        Instance = this;
-
-        GameObject thePlayer = GameObject.FindWithTag("Player");
-    }
-
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         _cameraTrans = Camera.main.transform; // grabs Camera game object
     }
 
-    // create an event delegate saying you are looking at an interactable object
     void Update()
     {
         // camera follows mouse
@@ -69,6 +54,7 @@ public class Player : MonoBehaviour
 
 
         // check if looking at an interactable
+        Debug.DrawRay(_cameraTrans.position, _cameraTrans.forward * _interactDistance, Color.blue);
         GameObject item = CheckIfFocused();
 
         if (item != null && Input.GetKeyDown(KeyCode.E))
@@ -83,7 +69,7 @@ public class Player : MonoBehaviour
     private GameObject CheckIfFocused()
     {
         RaycastHit seen;
-        if(Physics.Raycast(_cameraTrans.position, _cameraTrans.forward, out seen, _interactDistance))
+        if (Physics.Raycast(_cameraTrans.position, _cameraTrans.forward, out seen, _interactDistance))
         {
             if (seen.collider.gameObject.CompareTag("Interactable"))
             {
@@ -101,13 +87,6 @@ public class Player : MonoBehaviour
         }
 
         return null;
-        
-    }
 
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawRay(_cameraTrans.position, _cameraTrans.forward * _interactDistance);
     }
 }

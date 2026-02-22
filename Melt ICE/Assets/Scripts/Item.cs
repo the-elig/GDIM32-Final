@@ -16,7 +16,7 @@ public class Item : Interactable
     // Update is called once per frame
     void Update()
     {
-        Player player = Player.Instance;
+        //Player player = Player.Instance;
         
     }
 
