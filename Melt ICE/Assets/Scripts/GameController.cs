@@ -8,19 +8,33 @@ public enum _objective
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private Item[] _items;
+    [SerializeField] private List<string> _items;
     [SerializeField] private NPC[] _NPCs;
 
 
     public void Start()
     {
-        Locator.Instance.Player.Interacted += PlayerInteracted;
         Debug.Log("GameControl start");
+
+        Locator.Instance.Player.Interacted += PlayerInteracted;
     }
 
 
-    private void PlayerInteracted(Interactable inter)
+    private void PlayerInteracted(GameObject inter)
     {
-        Debug.Log("interacted");
+        // name of the object we interacted with
+        Debug.Log("player interacted with" + inter.GetComponent<Interactable>().GetName());
+
+
+        // find out if inter is an item or NPC and act accordingly
+        if (inter.GetComponent<Item>() != null) // if the interactable is an item
+        {
+            _items.Add(inter.GetComponent<Interactable>().GetName()); //add to inventory
+            inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
+        }
+        else // if the interactable is an NPC
+        {
+
+        }
     }
 }

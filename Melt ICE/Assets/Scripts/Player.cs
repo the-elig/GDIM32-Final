@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
 {
     // event delegates and events
     public delegate void InterDelegate(Interactable i);
-    public event InterDelegate Interacted;
+    public delegate void ObjectDelegate(GameObject o);
+    public event ObjectDelegate Interacted;
 
 
     [SerializeField] private float _moveSpeed = 3.0f;
@@ -55,12 +56,12 @@ public class Player : MonoBehaviour
 
         // check if looking at an interactable
         Debug.DrawRay(_cameraTrans.position, _cameraTrans.forward * _interactDistance, Color.blue);
-        GameObject item = CheckIfFocused();
+        GameObject inter = CheckIfFocused();
 
-        if (item != null && Input.GetKeyDown(KeyCode.E))
+        if (inter != null && Input.GetKeyDown(KeyCode.E))
         {
             // if looking at something and pressed E, invoke event
-            Interacted?.Invoke(item.GetComponent<Interactable>());
+            Interacted?.Invoke(inter);
         }
     }
 
