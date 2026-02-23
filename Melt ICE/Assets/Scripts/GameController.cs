@@ -5,19 +5,22 @@ public enum _objective
 {
     empty, cup, key, flamethrower
 }
+
 public class GameController : MonoBehaviour
 {
-    public static GameController Instance { get; private set; }
-    public Player Player { get; private set; }
-    private void Awake()
+    [SerializeField] private Item[] _items;
+    [SerializeField] private NPC[] _NPCs;
+
+
+    public void Start()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
-        Instance = this;
-        GameObject _player = GameObject.FindWithTag("Player");
-        Player = _player.GetComponent<Player>();
+        Locator.Instance.Player.Interacted += PlayerInteracted;
+        Debug.Log("GameControl start");
+    }
+
+
+    private void PlayerInteracted(Interactable inter)
+    {
+        Debug.Log("interacted");
     }
 }
