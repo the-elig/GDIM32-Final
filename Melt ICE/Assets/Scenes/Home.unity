@@ -1343,6 +1343,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330579276}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &346108378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3528801655930719580, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
+  m_PrefabInstance: {fileID: 1974358221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &346108383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346108378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Outside Door
+  _sceneName: Home
+  _position: {x: 2, y: 1, z: 10}
 --- !u!1 &376892320 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6785489816858771233, guid: 6ca90d26614ac324399ad3e8d9be687d, type: 3}
@@ -5151,7 +5171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Cup
-  isCollected: 0
 --- !u!1001 &1582475627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6726,7 +6745,10 @@ PrefabInstance:
     - {fileID: 2720577123989964619, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3528801655930719580, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 346108383}
   m_SourcePrefab: {fileID: 100100000, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
 --- !u!4 &1974358222 stripped
 Transform:
