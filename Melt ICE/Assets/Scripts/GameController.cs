@@ -10,6 +10,9 @@ public enum _objective
 public class GameController : MonoBehaviour
 {
     [SerializeField] private NPC[] _NPCs;
+    public delegate void PickedUpDelegate();
+
+    public event PickedUpDelegate PickedUp;
 
 
     public void Start()
@@ -28,6 +31,8 @@ public class GameController : MonoBehaviour
         if (inter.GetComponent<Door>() == null && inter.GetComponent<NPC>() == null)
         {
             // if the interactable is an item
+            PickedUp?.Invoke();
+
             inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
             Locator.Instance.Player._inventory.Add(inter.GetComponent<Interactable>().GetName()); //add to inventory
 
