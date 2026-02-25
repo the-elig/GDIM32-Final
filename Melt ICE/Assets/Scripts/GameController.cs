@@ -9,14 +9,11 @@ public enum _objective
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private List<string> _items;
     [SerializeField] private NPC[] _NPCs;
 
 
     public void Start()
     {
-        Debug.Log("GameControl start");
-
         Locator.Instance.Player.Interacted += PlayerInteracted;
     }
 
@@ -31,13 +28,12 @@ public class GameController : MonoBehaviour
         if (inter.GetComponent<Door>() == null && inter.GetComponent<NPC>() == null)
         {
             // if the interactable is an item
-            _items.Add(inter.GetComponent<Interactable>().GetName()); //add to inventory
             inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
         }
         else if (inter.GetComponent<NPC>() == null) // if the interactable is a door
         {
             // load correct scene
-            SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
+            //SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
 
             // put in correct location
             Locator.Instance.Player.GetComponent<Transform>().SetPositionAndRotation(

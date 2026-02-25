@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Player : MonoBehaviour
 {
     // event delegates and events
-    public delegate void InterDelegate(Interactable i);
+    public delegate void BoolDelegate(bool b);
     public delegate void ObjectDelegate(GameObject o);
+
+    public event BoolDelegate LookingAtInteractable;
     public event ObjectDelegate Interacted;
 
 
@@ -17,14 +20,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float _mouseSensitivity;
     [SerializeField] private float _interactDistance = 3.0f;
 
-    [SerializeField] private GameObject TEMP_UI;
-
 
     // camera member variables
     private Transform _cameraTrans;
     private float _rotationX;
     private float _rotationY;
-    
+
+
+    [SerializeField] private List<string> _inventory;
 
     void Start()
     {
@@ -62,6 +65,8 @@ public class Player : MonoBehaviour
         {
             // if looking at something and pressed E, invoke event
             Interacted?.Invoke(inter);
+            _inventory.Add(inter.GetComponent<Interactable>().GetName()); //add to inventory
+
         }
     }
 
@@ -74,17 +79,17 @@ public class Player : MonoBehaviour
         {
             if (seen.collider.gameObject.CompareTag("Interactable"))
             {
-                TEMP_UI.SetActive(true);
+                LookingAtInteractable.Invoke(true);
                 return seen.collider.gameObject;
             }
             else
             {
-                TEMP_UI.SetActive(false);
+                LookingAtInteractable.Invoke(false);
             }
         }
         else
         {
-            TEMP_UI.SetActive(false);
+            LookingAtInteractable.Invoke(false);
         }
 
         return null;
