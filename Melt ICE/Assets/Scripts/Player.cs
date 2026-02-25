@@ -41,8 +41,6 @@ public class Player : MonoBehaviour
 
 
         Instance = this;
-        GameObject playerObj = GameObject.FindWithTag("Player");
-        _player = playerObj.GetComponent<Player>();
 
         DontDestroyOnLoad(this);
     }
