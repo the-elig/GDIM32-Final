@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     private float _rotationY;
 
 
-    [SerializeField] private List<string> _inventory;
+    [SerializeField] public List<string> _inventory;
 
     void Start()
     {
@@ -76,8 +76,6 @@ public class Player : MonoBehaviour
         {
             // if looking at something and pressed E, invoke event
             Interacted?.Invoke(inter);
-            _inventory.Add(inter.GetComponent<Interactable>().GetName()); //add to inventory
-
         }
     }
 

@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _interactText;
     [SerializeField] private TMP_Text _inventoryText;
+    [SerializeField] private TMP_Text _notifText;
 
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void ShowInteract(bool b)

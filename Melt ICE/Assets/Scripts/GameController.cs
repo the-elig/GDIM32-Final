@@ -34,11 +34,16 @@ public class GameController : MonoBehaviour
             PickedUp?.Invoke();
 
             inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
+            Locator.Instance.Player._inventory.Add(inter.GetComponent<Interactable>().GetName()); //add to inventory
+
         }
         else if (inter.GetComponent<NPC>() == null) // if the interactable is a door
         {
             // load correct scene
-            //SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
+            if (SceneManager.GetActiveScene().name != inter.GetComponent<Door>().GetSceneName())
+            {
+                SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
+            }
 
             // put in correct location
             Locator.Instance.Player.GetComponent<Transform>().SetPositionAndRotation(
