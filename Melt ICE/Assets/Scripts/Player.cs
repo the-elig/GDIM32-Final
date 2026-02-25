@@ -10,9 +10,13 @@ public class Player : MonoBehaviour
     // event delegates and events
     public delegate void BoolDelegate(bool b);
     public delegate void ObjectDelegate(GameObject o);
+    public delegate void WalkDelegate(bool a);
+
+
 
     public event BoolDelegate LookingAtInteractable;
     public event ObjectDelegate Interacted;
+    public event WalkDelegate Walked;
 
 
     [SerializeField] private float _moveSpeed = 3.0f;
@@ -55,7 +59,14 @@ public class Player : MonoBehaviour
 
         transform.Translate(0, 0, forwardbackwards);
         transform.Translate(leftright, 0, 0);
-
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            Walked.Invoke(true);
+        }
+        else
+        {
+            Walked.Invoke(false);
+        }
 
         // check if looking at an interactable
         Debug.DrawRay(_cameraTrans.position, _cameraTrans.forward * _interactDistance, Color.blue);
