@@ -29,6 +29,24 @@ public class Player : MonoBehaviour
 
     [SerializeField] public List<string> _inventory;
 
+    public static Player Instance { get; private set; }
+    public Player _player { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+
+        Instance = this;
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        _player = playerObj.GetComponent<Player>();
+
+        DontDestroyOnLoad(this);
+    }
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

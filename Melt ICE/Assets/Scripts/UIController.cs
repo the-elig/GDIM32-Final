@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _interactText;
     [SerializeField] private TMP_Text _inventoryText;
+    [SerializeField] private GameObject _inventorybox;
     [SerializeField] private TMP_Text _notifText;
 
 
@@ -20,7 +21,10 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            _inventorybox.SetActive(true);
+        }
     }
 
     private void ShowInteract(bool b)
