@@ -15,8 +15,6 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log("GameControl start");
-
         Locator.Instance.Player.Interacted += PlayerInteracted;
     }
 
@@ -37,7 +35,7 @@ public class GameController : MonoBehaviour
         else if (inter.GetComponent<NPC>() == null) // if the interactable is a door
         {
             // load correct scene
-            SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
+            //SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
 
             // put in correct location
             Locator.Instance.Player.GetComponent<Transform>().SetPositionAndRotation(
