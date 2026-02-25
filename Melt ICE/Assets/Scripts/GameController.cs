@@ -33,7 +33,10 @@ public class GameController : MonoBehaviour
         else if (inter.GetComponent<NPC>() == null) // if the interactable is a door
         {
             // load correct scene
-            //SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
+            if (SceneManager.GetActiveScene().name != inter.GetComponent<Door>().GetSceneName())
+            {
+                SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
+            }
 
             // put in correct location
             Locator.Instance.Player.GetComponent<Transform>().SetPositionAndRotation(
