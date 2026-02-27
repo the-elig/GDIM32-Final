@@ -61,11 +61,11 @@ public class Player : MonoBehaviour
         transform.Translate(leftright, 0, 0);
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            Walked.Invoke(true);
+            Walked?.Invoke(true);
         }
         else
         {
-            Walked.Invoke(false);
+            Walked?.Invoke(false);
         }
 
         // check if looking at an interactable
