@@ -6,7 +6,7 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _interactText;
-    [SerializeField] private TMP_Text _inventoryText;
+    [SerializeField] public TMP_Text _inventoryText;
     [SerializeField] private GameObject _inventorybox;
     [SerializeField] private TMP_Text _notifText;
     private bool _boxActive = false;

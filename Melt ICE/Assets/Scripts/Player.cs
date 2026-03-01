@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -19,6 +20,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float _turnSpeed = 3.0f;
     [SerializeField] private float _mouseSensitivity;
     [SerializeField] private float _interactDistance = 3.0f;
+    [SerializeField] private GameObject _interactText;
+    [SerializeField] private UIController UI;
+    [SerializeField] private float _spawnUp;
+    [SerializeField] private float _spawnRight;
+    private GameObject _itemOne;
+    private bool _oneOut = false;
 
 
     // camera member variables
@@ -27,7 +34,7 @@ public class Player : MonoBehaviour
     private float _rotationY;
 
 
-    [SerializeField] public List<string> _inventory;
+    [SerializeField] public List<GameObject> _inventory;
 
     public static Player Instance { get; private set; }
     public Player _player { get; private set; }
@@ -81,6 +88,18 @@ public class Player : MonoBehaviour
         {
             // if looking at something and pressed E, invoke event
             Interacted?.Invoke(inter);
+            string _name = inter.GetComponent<Interactable>().GetName();
+            UI._inventoryText.text = $"{_name}";
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1) && _oneOut == false)
+        {
+            GameObject _itemOne = Instantiate(_inventory[0]);
+            _itemOne.transform.SetParent(_player.transform);
+            _itemOne.transform.position = new Vector3(transform.position.x - _spawnRight, transform.position.y + _spawnUp, transform.position.z);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1) && _oneOut == false)
+        {
+            Destroy(_itemOne);
         }
     }
 
@@ -94,10 +113,12 @@ public class Player : MonoBehaviour
             if (seen.collider.gameObject.CompareTag("Interactable"))
             {
                 LookingAtInteractable.Invoke(true);
+                _interactText.SetActive(true);
                 return seen.collider.gameObject;
             }
             else
             {
+                _interactText.SetActive(false);
                 LookingAtInteractable.Invoke(false);
             }
         }
