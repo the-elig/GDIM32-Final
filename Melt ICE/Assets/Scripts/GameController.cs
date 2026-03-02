@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
-        Locator.Instance.Player.Interacted += PlayerInteracted;
+        Player.Instance.Interacted += PlayerInteracted;
     }
 
 
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
             PickedUp?.Invoke();
 
             inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
-            Locator.Instance.Player._inventory.Add(inter.GetComponent<Interactable>().GetPrefab()); //add to inventory
+            Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
 
         }
         else if (inter.GetComponent<Door>() != null) // if the interactable is a door
@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
             }
 
             // put in correct location
-            Locator.Instance.Player.GetComponent<Transform>().SetPositionAndRotation(
+            Player.Instance.GetComponent<Transform>().SetPositionAndRotation(
                 inter.GetComponent<Door>().GetPosition(), Quaternion.identity);
 
         }

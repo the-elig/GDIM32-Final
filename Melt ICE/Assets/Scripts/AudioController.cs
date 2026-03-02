@@ -12,8 +12,8 @@ public class AudioController : MonoBehaviour
     
     void Start()
     {
-        Locator.Instance.Player.Walked += Walk;
-        //Locator.Instance.GameController.PickedUp += Collected;
+        Player.Instance.Walked += Walk;
+        //Player.Instance.GameController.PickedUp += Collected;
 
     }
 

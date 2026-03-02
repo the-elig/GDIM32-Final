@@ -11,10 +11,5 @@ public abstract class Interactable : MonoBehaviour
     { 
         return _name; 
     }
-
-    public GameObject GetPrefab() 
-    {  
-        return _prefab; 
-    }
 }
 

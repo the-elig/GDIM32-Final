@@ -355,6 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a86ade52969be349a4644317cbb13ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Player>k__BackingField: {fileID: 0}
+  <GameController>k__BackingField: {fileID: 0}
 --- !u!114 &70136638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7839,7 +7841,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d9f67704696834f30bd70f63b70b3615, type: 3}
       propertyPath: m_Name
-      value: Ch03_nonPBR
+      value: Sister
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9f67704696834f30bd70f63b70b3615, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d9f67704696834f30bd70f63b70b3615, type: 3}
       propertyPath: m_Controller
@@ -7907,6 +7913,7 @@ MonoBehaviour:
   _playerDistance: 0
   _animator: {fileID: 2093899951}
   _player: {fileID: 696282164}
+  _dialogueStartNode: {fileID: 0}
 --- !u!1 &2113935994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5920910244212063300, guid: acb4333822e292f42a238ca58b2518ac, type: 3}

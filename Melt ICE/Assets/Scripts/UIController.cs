@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Locator.Instance.Player.LookingAtInteractable += ShowInteract;
+        Player.Instance.LookingAtInteractable += ShowInteract;
 
     }
 

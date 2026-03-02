@@ -5,14 +5,27 @@ using UnityEngine;
 
 public class Sister : NPC
 {
-    private NPCSpeech _npcReaction;
-
+    // animation member variables
     [SerializeField] private float _awareDistance = 6.0f;
     [SerializeField] private float _playerDistance;
     [SerializeField] private Animator _animator;
     [SerializeField] private Player _player;
+    private NPCSpeech _npcReaction;
 
-    // Start is called before the first frame update
+
+    // dialogue member variables
+    [SerializeField] private DialogueNode _dialogueStartNode;
+    private DialogueNode _currentNode;
+    private int _currentLine = 0;
+    private bool _runningDialogue;
+    private bool _hasCup;
+
+    private void Start()
+    {
+        _currentNode = _dialogueStartNode;
+        //_hasCup = Locator.Instance.Player._inventory.Contains("Cup")
+    }
+
     void Update()
     {
         _playerDistance = Vector3.Distance(_player.transform.position, transform.position);
@@ -20,7 +33,12 @@ public class Sister : NPC
         NPCState();
     }
 
+    private void AdvanceDialogue()
+    {
+        _runningDialogue = true;
 
+        
+    }
     public override void NPCState()
     {
 
