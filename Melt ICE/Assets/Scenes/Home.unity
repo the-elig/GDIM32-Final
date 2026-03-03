@@ -378,7 +378,6 @@ MonoBehaviour:
   _playerOptions: {fileID: 949452333}
   _option1: {fileID: 1286729320}
   _option2: {fileID: 107556401}
-  _option3: {fileID: 0}
 --- !u!114 &70136639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,7 +2003,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7971698, g: 0.7971698, b: 0.7971698, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2159,7 +2158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &522901542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2733,7 +2732,6 @@ MonoBehaviour:
   _playerOptions: {fileID: 0}
   _option1: {fileID: 0}
   _option2: {fileID: 0}
-  _option3: {fileID: 0}
 --- !u!1 &696282158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4394,7 +4392,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -4581,7 +4579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &949452334
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8705,6 +8703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Sister
+  _npcReaction: 0
   _dialogue: {fileID: 70136638}
   _dialogueStartNode: {fileID: 11400000, guid: f88057a96bb01f94bb8d56c0fef36867, type: 2}
   _awareDistance: 6

@@ -18,7 +18,6 @@ public class NPC : Interactable
     public DialogueNode _dialogueStartNode;
     private DialogueNode _currentNode;
     private int _currentLine = 0;
-    private bool _runningDialogue;
     private bool _waitingForPlayerResponse;
 
     // animation member variables
@@ -37,14 +36,24 @@ public class NPC : Interactable
         _playerDistance = Vector3.Distance(_player.transform.position, transform.position);
         RunState(_animator);
         NPCState();
+
+        if (_npcReaction == NPCSpeech.Talking && Input.GetKeyDown(KeyCode.E))
+        {
+            AdvanceDialogue();
+        }
+    }
+
+    public void SetToTalking() // called by gamecontroller when interacts with npc
+    {
+        Debug.Log("set to talking");
+
+        _npcReaction = NPCSpeech.Talking;
+        _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
     }
 
     private void AdvanceDialogue()
     {
         Debug.Log("advanced dialogue");
-
-        _runningDialogue = true;
-
         if (_currentLine < _currentNode._lines.Length)
         {
             // if we still have NPC lines left, keep playing NPC lines
@@ -64,17 +73,6 @@ public class NPC : Interactable
         }
     }
 
-    private void EndDialogue()
-    {
-        Debug.Log("ended dialogue");
-
-        _runningDialogue = false;
-        _waitingForPlayerResponse = false;
-        _currentNode = _dialogueStartNode;
-        _currentLine = 0;
-        _dialogue.HideDialogue();
-    }
-
     public void SelectedOption(int option)
     {
         _currentLine = 0;
@@ -84,23 +82,21 @@ public class NPC : Interactable
         AdvanceDialogue();
     }
 
-
-    public void SetToTalking() // called by gamecontroller when interacts with npc
+    private void EndDialogue()
     {
-        Debug.Log("set to talking");
+        Debug.Log("ended dialogue");
 
-        _npcReaction = NPCSpeech.Talking;
-        _runningDialogue = true;
+        _npcReaction = NPCSpeech.Idle; // put state off talking
+        _waitingForPlayerResponse = false;
+        _currentNode = _dialogueStartNode;
+        _currentLine = 0;
+
+        _dialogue.HideDialogue();
     }
+
 
     private void NPCState()
     {
-        if (_npcReaction == NPCSpeech.Talking && !_runningDialogue) // if done talking
-        {
-            Debug.Log("npc state to idle");
-
-            _npcReaction = NPCSpeech.Idle;
-        }
         if (_npcReaction == NPCSpeech.Talking)
         {
             // if it's talking, don't change state
@@ -115,11 +111,6 @@ public class NPC : Interactable
         }
     }
 
-
-    public void Talk()
-    {
-        throw new System.NotImplementedException();
-    }
 
     private void RunState(Animator _animator)
     {
