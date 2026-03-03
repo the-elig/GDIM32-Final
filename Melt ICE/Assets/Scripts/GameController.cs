@@ -10,9 +10,10 @@ public enum _objective
 public class GameController : MonoBehaviour
 {
     [SerializeField] private NPC[] _NPCs;
-    public delegate void PickedUpDelegate();
+    public delegate void EmptyDelegate();
+    
 
-    public event PickedUpDelegate PickedUp;
+    public event EmptyDelegate PickedUp;
 
 
     public void Start()

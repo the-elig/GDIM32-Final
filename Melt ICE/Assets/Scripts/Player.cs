@@ -6,20 +6,18 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour //THIS IS OUR SINGLETON
 {
     // event delegates and events
     public delegate void BoolDelegate(bool b);
     public delegate void ObjectDelegate(GameObject o);
-    public delegate void WalkDelegate(bool a);
-
-
 
     public event BoolDelegate LookingAtInteractable;
     public event ObjectDelegate Interacted;
-    public event WalkDelegate Walked;
+    public event BoolDelegate Walked;
 
 
+    // member variables
     [SerializeField] private float _moveSpeed = 3.0f;
     [SerializeField] private float _turnSpeed = 3.0f;
     [SerializeField] private float _mouseSensitivity;
@@ -41,21 +39,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] public List<GameObject> _inventory;
 
-    public static Player Instance { get; private set; }
-    public Player _player { get; private set; }
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
-
-
-        Instance = this;
-
-        DontDestroyOnLoad(this);
-    }
 
     void Start()
     {
@@ -152,5 +135,23 @@ public class Player : MonoBehaviour
 
         return null;
 
+    }
+
+
+    //singleton stuff
+    public static Player Instance { get; private set; }
+    public Player _player { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+
+        Instance = this;
+
+        DontDestroyOnLoad(this);
     }
 }

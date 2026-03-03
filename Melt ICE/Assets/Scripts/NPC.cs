@@ -49,6 +49,7 @@ public class NPC : Interactable
 
         _npcReaction = NPCSpeech.Talking;
         _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
+        _currentLine++;
     }
 
     private void AdvanceDialogue()
