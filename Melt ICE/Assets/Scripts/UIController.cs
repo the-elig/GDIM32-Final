@@ -88,5 +88,7 @@ public class UIController : MonoBehaviour
         _dialogueBox.SetActive(false);
         _playerOptions.SetActive(false);
         gameObject.SetActive(false);
+
+        Player.Instance.SetCanMoveCamera(true);
     }
 }

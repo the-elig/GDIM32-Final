@@ -56,6 +56,7 @@ public class GameController : MonoBehaviour
             if (inter.GetComponent<NPC>()._npcReaction != NPCSpeech.Talking)
             {
                 inter.GetComponent<NPC>().SetToTalking();
+                Player.Instance.SetCanMoveCamera(false);
             }
         }
     }

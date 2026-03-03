@@ -29,6 +29,8 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
     private GameObject _itemOne;
     private bool _oneOut = false;
 
+    private bool _canMoveCamera = true;
+
 
 
     // camera member variables
@@ -49,19 +51,29 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
     void Update()
     {
         // camera follows mouse
-        float mouseY = Input.GetAxis("Mouse Y");
-        _rotationY += mouseY * _mouseSensitivity;
-        _rotationY = Mathf.Clamp(_rotationY, -60.0f, 60.0f);
+        if (_canMoveCamera)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
 
-        float mouseX = Input.GetAxis("Mouse X");
-        _rotationX += mouseX * _mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y");
+            _rotationY += mouseY * _mouseSensitivity;
+            _rotationY = Mathf.Clamp(_rotationY, -60.0f, 60.0f);
 
-        _cameraTrans.localEulerAngles = new Vector3(-_rotationY, 0, 0);
-        transform.localEulerAngles = new Vector3(0, _rotationX, 0);
+            float mouseX = Input.GetAxis("Mouse X");
+            _rotationX += mouseX * _mouseSensitivity;
 
+            _cameraTrans.localEulerAngles = new Vector3(-_rotationY, 0, 0);
+            transform.localEulerAngles = new Vector3(0, _rotationX, 0);
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
 
-        // player movement
-        float forwardbackwards = Input.GetAxis("Vertical") * _moveSpeed * Time.deltaTime;
+            // player movement
+            float forwardbackwards = Input.GetAxis("Vertical") * _moveSpeed * Time.deltaTime;
         float leftright = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
 
         transform.Translate(0, 0, forwardbackwards);
@@ -137,6 +149,10 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
 
     }
 
+    public void SetCanMoveCamera(bool b)
+    {
+        _canMoveCamera = b;
+    }
 
     //singleton stuff
     public static Player Instance { get; private set; }

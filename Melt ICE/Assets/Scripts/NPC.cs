@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
@@ -37,7 +38,8 @@ public class NPC : Interactable
         RunState(_animator);
         NPCState();
 
-        if (_npcReaction == NPCSpeech.Talking && Input.GetKeyDown(KeyCode.E))
+        if (_npcReaction == NPCSpeech.Talking 
+            && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
         {
             AdvanceDialogue();
         }
@@ -49,7 +51,6 @@ public class NPC : Interactable
 
         _npcReaction = NPCSpeech.Talking;
         _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
-        _currentLine++;
     }
 
     private void AdvanceDialogue()
