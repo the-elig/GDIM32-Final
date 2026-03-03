@@ -5,7 +5,6 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] public string _name;
-    [SerializeField] public GameObject _prefab;
 
     public string GetName()
     { 

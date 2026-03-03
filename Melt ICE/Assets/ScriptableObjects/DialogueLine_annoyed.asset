@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: DialogueLine_annoyed
   m_EditorClassIdentifier: 
   npcName: 
-  _lines: []
-  _playerReplyOptions: []
-  _npcReplies: []
+  _lines:
+  - Because I said so.
+  _playerReplyOptions:
+  - Okay.
+  _npcReplies:
+  - {fileID: 11400000, guid: 130348b68edb2874cbbadd390234f289, type: 2}

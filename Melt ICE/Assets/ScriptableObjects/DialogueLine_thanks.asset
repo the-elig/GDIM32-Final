@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b6eab7e35aaf646969ae37aa4fefec, type: 3}
-  m_Name: DialogueLine_thirsty
+  m_Name: DialogueLine_thanks
   m_EditorClassIdentifier: 
-  npcName: SIster
+  npcName: 
   _lines:
-  - I'm thirsty. Can you grab me that cup?
-  _playerReplyOptions:
-  - Why should I?
-  - Okay.
-  _npcReplies:
-  - {fileID: 11400000, guid: 04784bb3d01c38b4289453011247d676, type: 2}
-  - {fileID: 11400000, guid: 130348b68edb2874cbbadd390234f289, type: 2}
+  - Thanks!
+  _playerReplyOptions: []
+  _npcReplies: []

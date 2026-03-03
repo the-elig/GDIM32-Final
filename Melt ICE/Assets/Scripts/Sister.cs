@@ -1,3 +1,7 @@
+/*
+fajdkfas
+
+
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
@@ -11,20 +15,7 @@ public class Sister : NPC
     [SerializeField] private Animator _animator;
     [SerializeField] private Player _player;
     private NPCSpeech _npcReaction;
-
-
-    // dialogue member variables
-    [SerializeField] private DialogueNode _dialogueStartNode;
-    private DialogueNode _currentNode;
-    private int _currentLine = 0;
-    private bool _runningDialogue;
-    private bool _hasCup;
-
-    private void Start()
-    {
-        _currentNode = _dialogueStartNode;
-        //_hasCup = Locator.Instance.Player._inventory.Contains("Cup")
-    }
+   
 
     void Update()
     {
@@ -33,26 +24,18 @@ public class Sister : NPC
         NPCState();
     }
 
-    private void AdvanceDialogue()
+    public void NPCState()
     {
-        _runningDialogue = true;
-
-        
-    }
-    public override void NPCState()
-    {
-
-
         if(_playerDistance <= _awareDistance)
         {
             _npcReaction = NPCSpeech.Aware;
         }
-        /*
-        else if(you press E and are talking to this dude)
-        {
-            _npcReaction = NPCSpeech.Talking;
-        }
-        */
+        
+        //else if(you press E and are talking to this dude)
+        //{
+        //    _npcReaction = NPCSpeech.Talking;
+        //}
+        
         else
         {
             _npcReaction = NPCSpeech.Idle;
@@ -60,8 +43,7 @@ public class Sister : NPC
     }
     
 
-    // Update is called once per frame
-    public override void Talk()
+    public void Talk()
     {
         throw new System.NotImplementedException();
     }
@@ -100,3 +82,4 @@ public class Sister : NPC
         _animator.SetBool("Aware", true);
     }
 }
+*/

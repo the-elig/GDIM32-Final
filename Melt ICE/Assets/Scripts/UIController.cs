@@ -5,11 +5,19 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    // basic UI
     [SerializeField] private TMP_Text _interactText;
     [SerializeField] public TMP_Text _inventoryText;
     [SerializeField] private GameObject _inventorybox;
     [SerializeField] private TMP_Text _notifText;
     private bool _boxActive = false;
+
+    // dialogue UI
+    [SerializeField] private GameObject _dialogueBox;
+    [SerializeField] private TMP_Text _npcText;
+    [SerializeField] private GameObject _playerOptions;
+    [SerializeField] private TMP_Text _option1;
+    [SerializeField] private TMP_Text _option2;
 
 
     // Start is called before the first frame update
@@ -37,5 +45,46 @@ public class UIController : MonoBehaviour
     private void ShowInteract(bool b)
     {
         _interactText.enabled = b;
+    }
+
+
+    // dialogue logic
+    public void ShowDialogue(string dialogue)
+    {
+        _dialogueBox.SetActive(true);
+
+        _npcText.enabled = true;
+        _playerOptions.SetActive(false);
+
+        _npcText.text = dialogue;
+    }
+
+    // note: this only works for up to 3 dialogue options at a time currently
+    // if you want to make more possible, you may have to get crafty with the UI... :)
+    public void ShowPlayerOptions(string[] options)
+    {
+        _dialogueBox.SetActive(true);
+
+        _npcText.enabled = false;
+        _playerOptions.SetActive(true);
+
+        _option1.text = options[0];
+
+        if (options.Length >= 2)
+        {
+            _option2.transform.parent.gameObject.SetActive(true);
+            _option2.text = options[1];
+        }
+        else
+        {
+            _option2.transform.parent.gameObject.SetActive(false);
+        }
+    }
+
+    public void HideDialogue()
+    {
+        _dialogueBox.SetActive(false);
+        _playerOptions.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
