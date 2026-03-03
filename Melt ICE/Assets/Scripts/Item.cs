@@ -5,8 +5,16 @@ using UnityEngine.Assertions;
 
 public class Item : Interactable
 {
-    [SerializeField] private GameObject _prefab;
-   public GameObject GetPrefab()
+
+    [SerializeField] public string _name;
+    [SerializeField] public GameObject _prefab;
+
+    public string GetName()
+    {
+        return _name;
+    }
+
+    public GameObject GetPrefab()
     {
         return _prefab;
     }

@@ -4,11 +4,9 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    [SerializeField] public string _name;
-
-    public string GetName()
-    { 
-        return _name; 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 }
 
