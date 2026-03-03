@@ -6,20 +6,18 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour //THIS IS OUR SINGLETON
 {
     // event delegates and events
     public delegate void BoolDelegate(bool b);
     public delegate void ObjectDelegate(GameObject o);
-    public delegate void WalkDelegate(bool a);
-
-
 
     public event BoolDelegate LookingAtInteractable;
     public event ObjectDelegate Interacted;
-    public event WalkDelegate Walked;
+    public event BoolDelegate Walked;
 
 
+    // member variables
     [SerializeField] private float _moveSpeed = 3.0f;
     [SerializeField] private float _turnSpeed = 3.0f;
     [SerializeField] private float _mouseSensitivity;
@@ -31,6 +29,8 @@ public class Player : MonoBehaviour
     private GameObject _itemOne;
     private bool _oneOut = false;
 
+    private bool _canMoveCamera = true;
+
 
 
     // camera member variables
@@ -39,23 +39,9 @@ public class Player : MonoBehaviour
     private float _rotationY;
 
 
-    [SerializeField] public List<GameObject> _inventory;
+    public List<GameObject> _inventory;
+    public List<string> _inventoryString;
 
-    public static Player Instance { get; private set; }
-    public Player _player { get; private set; }
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
-
-
-        Instance = this;
-
-        DontDestroyOnLoad(this);
-    }
 
     void Start()
     {
@@ -66,16 +52,26 @@ public class Player : MonoBehaviour
     void Update()
     {
         // camera follows mouse
-        float mouseY = Input.GetAxis("Mouse Y");
-        _rotationY += mouseY * _mouseSensitivity;
-        _rotationY = Mathf.Clamp(_rotationY, -60.0f, 60.0f);
+        if (_canMoveCamera)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
 
-        float mouseX = Input.GetAxis("Mouse X");
-        _rotationX += mouseX * _mouseSensitivity;
+            float mouseY = Input.GetAxis("Mouse Y");
+            _rotationY += mouseY * _mouseSensitivity;
+            _rotationY = Mathf.Clamp(_rotationY, -60.0f, 60.0f);
 
-        _cameraTrans.localEulerAngles = new Vector3(-_rotationY, 0, 0);
-        transform.localEulerAngles = new Vector3(0, _rotationX, 0);
+            float mouseX = Input.GetAxis("Mouse X");
+            _rotationX += mouseX * _mouseSensitivity;
 
+            _cameraTrans.localEulerAngles = new Vector3(-_rotationY, 0, 0);
+            transform.localEulerAngles = new Vector3(0, _rotationX, 0);
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
 
         // player movement
         float forwardbackwards = Input.GetAxis("Vertical") * _moveSpeed * Time.deltaTime;
@@ -150,5 +146,27 @@ public class Player : MonoBehaviour
 
         return null;
 
+    }
+
+    public void SetCanMoveCamera(bool b)
+    {
+        _canMoveCamera = b;
+    }
+
+    //singleton stuff
+    public static Player Instance { get; private set; }
+    public Player _player { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+
+        Instance = this;
+
+        DontDestroyOnLoad(this);
     }
 }

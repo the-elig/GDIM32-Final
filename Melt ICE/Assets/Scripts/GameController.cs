@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
-        Locator.Instance.Player.Interacted += PlayerInteracted;
+        Player.Instance.Interacted += PlayerInteracted;
     }
 
 
@@ -48,13 +48,17 @@ public class GameController : MonoBehaviour
             }
 
             // put in correct location
-            Locator.Instance.Player.GetComponent<Transform>().SetPositionAndRotation(
+            Player.Instance.GetComponent<Transform>().SetPositionAndRotation(
                 inter.GetComponent<Door>().GetPosition(), Quaternion.identity);
 
         }
         else // if the interactable is an NPC
         {
-
+            if (inter.GetComponent<NPC>()._npcReaction != NPCSpeech.Talking)
+            {
+                inter.GetComponent<NPC>().SetToTalking();
+                Player.Instance.SetCanMoveCamera(false);
+            }
         }
     }
 }
