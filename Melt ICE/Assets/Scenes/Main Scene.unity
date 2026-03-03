@@ -534,10 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Inside
-  _prefab: {fileID: 0}
   _sceneName: Home
-  _position: {x: 2, y: 1, z: 10}
+  _position: {x: -3, y: 1, z: 10.5}
 --- !u!65 &283651539
 BoxCollider:
   m_ObjectHideFlags: 0
