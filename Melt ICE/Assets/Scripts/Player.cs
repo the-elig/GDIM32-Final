@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     private bool _oneOut = false;
 
 
+
     // camera member variables
     private Transform _cameraTrans;
     private float _rotationX;
@@ -102,18 +103,29 @@ public class Player : MonoBehaviour
             string _name = inter.GetComponent<Interactable>().GetName();
             UI._inventoryText.text = $"{_name}";
         }
+
+        EquippedItemOne();
+        
+    }
+
+    private void EquippedItemOne()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha1) && _oneOut == false)
         {
             GameObject _itemOne = Instantiate(_inventory[0]);
-            _itemOne.transform.SetParent(_player.transform);
-            _itemOne.transform.position = new Vector3(transform.position.x - _spawnRight, transform.position.y + _spawnUp, transform.position.z);
+            _itemOne.SetActive(true);
+            _itemOne.transform.SetParent(_cameraTrans);
+            //Vector3 _itemOnePos = new Vector3 (1, 1, 1);
+            //_itemOne.transform.localPosition = _itemOnePos;
+            _itemOne.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
+            _oneOut = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1) && _oneOut == false)
+        else if (Input.GetKeyDown(KeyCode.Alpha1) && _oneOut == true)
         {
-            Destroy(_itemOne);
+            Destroy(GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).gameObject);
+            _oneOut = false;
         }
     }
-
 
     //This is to check if the raycast attached to the player cursor actually hit something
     private GameObject CheckIfFocused()

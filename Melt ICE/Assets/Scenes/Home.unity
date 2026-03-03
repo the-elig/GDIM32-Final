@@ -368,9 +368,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactText: {fileID: 1897438932}
-  _inventoryText: {fileID: 0}
-  _inventorybox: {fileID: 0}
-  _notifText: {fileID: 0}
+  _inventoryText: {fileID: 1500073108}
+  _inventorybox: {fileID: 725419864}
+  _notifText: {fileID: 2050174337}
 --- !u!114 &70136639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,7 +1519,6 @@ MonoBehaviour:
   _name: Outside Door
   _prefab: {fileID: 0}
   _sceneName: Main Scene
-  _sceneName: Home
   _position: {x: 2, y: 1, z: 10}
 --- !u!1 &376892320 stripped
 GameObject:
@@ -2777,7 +2776,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1108493462}
   - {fileID: 1500073107}
   m_Father: {fileID: 659955868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3684,7 +3682,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1417527231}
-  - {fileID: 1580916745}
+  - {fileID: 1529568182}
   - {fileID: 89932824}
   - {fileID: 40352724}
   - {fileID: 469948905}
@@ -5166,7 +5164,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -3559909895095799887, guid: 3fb692b9567b9744e9f36315528e7f16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 816586387}
+    - targetCorrespondingSourceObject: {fileID: -3559909895095799887, guid: 3fb692b9567b9744e9f36315528e7f16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 816586386}
   m_SourcePrefab: {fileID: 100100000, guid: 3fb692b9567b9744e9f36315528e7f16, type: 3}
 --- !u!4 &1417527231 stripped
 Transform:
@@ -5575,6 +5579,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf0fc3a4d7bb85d46b00eb1835f36e55, type: 3}
+--- !u!4 &1529568182 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2637780517929785281, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
+  m_PrefabInstance: {fileID: 4820158495984412453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1555095997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5718,11 +5727,6 @@ Transform:
   - {fileID: 1652313983}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1580916745 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2442124755734955067, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
-  m_PrefabInstance: {fileID: 4820158495984412453}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1582475627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7311,22 +7315,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 643378309347666600, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
   m_PrefabInstance: {fileID: 1974358221}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1974358226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302957458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: 
-  _prefab: {fileID: 0}
-  _sceneName: 
-  _position: {x: 0, y: 0, z: 0}
 --- !u!1001 &2008215151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7914,6 +7902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Sister
+  _prefab: {fileID: 0}
   _awareDistance: 6
   _playerDistance: 0
   _animator: {fileID: 2093899951}
