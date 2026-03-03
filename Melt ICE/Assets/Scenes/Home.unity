@@ -1518,8 +1518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Outside Door
   _prefab: {fileID: 0}
-  _sceneName: Main Scene
-  _position: {x: 2, y: 1, z: 10}
+  _sceneName: Home
+  _position: {x: 2, y: 1, z: 2}
 --- !u!1 &376892320 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6785489816858771233, guid: 6ca90d26614ac324399ad3e8d9be687d, type: 3}
@@ -3009,7 +3009,7 @@ MonoBehaviour:
   _name: Freedom
   _prefab: {fileID: 0}
   _sceneName: Main Scene
-  _position: {x: 2, y: 1, z: 10}
+  _position: {x: 15.93, y: 0.91, z: 17.78}
 --- !u!65 &816586387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5153,6 +5153,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 12b3a806df937d749a176d37e7a8e101, type: 2}
+    - target: {fileID: -3559909895095799887, guid: 3fb692b9567b9744e9f36315528e7f16, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 342582558702593484, guid: 3fb692b9567b9744e9f36315528e7f16, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
