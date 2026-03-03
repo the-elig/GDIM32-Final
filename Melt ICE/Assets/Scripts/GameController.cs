@@ -10,22 +10,20 @@ public enum _objective
 public class GameController : MonoBehaviour
 {
     [SerializeField] private NPC[] _NPCs;
-    public delegate void EmptyDelegate();
-    
+    [SerializeField] private UIController UI;
+    public delegate void PickedUpDelegate();
 
-    public event EmptyDelegate PickedUp;
-
+    public event PickedUpDelegate PickedUp;
+   
 
     public void Start()
     {
-        Player.Instance.Interacted += PlayerInteracted;
+        Locator.Instance.Player.Interacted += PlayerInteracted;
     }
 
 
     private void PlayerInteracted(GameObject inter)
     {
-        // name of the object we interacted with
-        Debug.Log("player interacted with " + inter.GetComponent<Interactable>().GetName());
 
 
         // find out if inter is an item or NPC and act accordingly
@@ -35,8 +33,10 @@ public class GameController : MonoBehaviour
             PickedUp?.Invoke();
 
             inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
-            Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
-            Player.Instance._inventoryString.Add(inter.GetComponent<Item>().GetName()); //add to inventory list
+            Locator.Instance.Player._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
+            string _name = inter.GetComponent<Item>().GetName();
+            UI._inventoryText.text = $"{_name}";
+            Debug.Log("You picked up item");
 
         }
         else if (inter.GetComponent<Door>() != null) // if the interactable is a door
@@ -48,17 +48,13 @@ public class GameController : MonoBehaviour
             }
 
             // put in correct location
-            Player.Instance.GetComponent<Transform>().SetPositionAndRotation(
+            Locator.Instance.Player.GetComponent<Transform>().SetPositionAndRotation(
                 inter.GetComponent<Door>().GetPosition(), Quaternion.identity);
 
         }
         else // if the interactable is an NPC
         {
-            if (inter.GetComponent<NPC>()._npcReaction != NPCSpeech.Talking)
-            {
-                inter.GetComponent<NPC>().SetToTalking();
-                Player.Instance.SetCanMoveCamera(false);
-            }
+
         }
     }
 }
