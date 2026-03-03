@@ -327,7 +327,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a39f6674b27ba42a9068b107892265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NPCs: []
+  _NPCs:
+  - {fileID: 0}
+  _NPCscript: {fileID: 2093899955}
+  UI: {fileID: 659955869}
 --- !u!4 &70136636
 Transform:
   m_ObjectHideFlags: 0
@@ -352,7 +355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 70136634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a86ade52969be349a4644317cbb13ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e8d5ace16f636b34a9b8951d6300a9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &70136638
@@ -508,7 +511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Bed Door In
   _sceneName: Home
   _position: {x: 2, y: 1, z: 3}
 --- !u!1001 &89336161
@@ -1654,7 +1656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Outside Door
   _sceneName: Home
   _position: {x: 2, y: 1, z: 2}
 --- !u!1 &376892320 stripped
@@ -2615,6 +2616,7 @@ GameObject:
   - component: {fileID: 659955866}
   - component: {fileID: 659955865}
   - component: {fileID: 659955869}
+  - component: {fileID: 659955870}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2725,11 +2727,23 @@ MonoBehaviour:
   _inventoryText: {fileID: 1500073108}
   _inventorybox: {fileID: 725419864}
   _notifText: {fileID: 2050174337}
-  _dialogueBox: {fileID: 0}
-  _npcText: {fileID: 0}
-  _playerOptions: {fileID: 0}
-  _option1: {fileID: 0}
-  _option2: {fileID: 0}
+  _dialogueBox: {fileID: 522901541}
+  _npcText: {fileID: 915020123}
+  _playerOptions: {fileID: 949452333}
+  _option1: {fileID: 1286729320}
+  _option2: {fileID: 107556401}
+--- !u!114 &659955870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659955864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d5ace16f636b34a9b8951d6300a9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &696282158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,6 +2759,7 @@ GameObject:
   - component: {fileID: 696282163}
   - component: {fileID: 696282164}
   - component: {fileID: 696282165}
+  - component: {fileID: 696282166}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2986,6 +3001,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &696282166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696282158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d5ace16f636b34a9b8951d6300a9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &700823269
 GameObject:
   m_ObjectHideFlags: 0
@@ -3357,7 +3384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Freedom
   _sceneName: Main Scene
   _position: {x: 15.93, y: 0.91, z: 17.78}
 --- !u!65 &816586387
@@ -4032,7 +4058,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1417527231}
-  - {fileID: 1529568182}
   - {fileID: 89932824}
   - {fileID: 40352724}
   - {fileID: 469948905}
@@ -5780,6 +5805,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 844869914}
   m_SourcePrefab: {fileID: 100100000, guid: 46a5efc69bd2ca94fbd3cccc19cbb855, type: 3}
+--- !u!1 &1396536725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3445420614483365243, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
+  m_PrefabInstance: {fileID: 4820158495984412453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1414483485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5995,7 +6025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Bedroom Door Out
   _sceneName: Home
   _position: {x: 2, y: 1, z: 5}
 --- !u!4 &1445218540 stripped
@@ -6379,11 +6408,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf0fc3a4d7bb85d46b00eb1835f36e55, type: 3}
---- !u!4 &1529568182 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2637780517929785281, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
-  m_PrefabInstance: {fileID: 4820158495984412453}
+--- !u!114 &1529568187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396536725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d5ace16f636b34a9b8951d6300a9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1555095997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8663,6 +8699,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d9f67704696834f30bd70f63b70b3615, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2093899955}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d9f67704696834f30bd70f63b70b3615, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2093899957}
   m_SourcePrefab: {fileID: 100100000, guid: d9f67704696834f30bd70f63b70b3615, type: 3}
 --- !u!1 &2093899949 stripped
 GameObject:
@@ -8709,7 +8748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0900c5a4e96c80a49b188b29e33df819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Sister
   _npcReaction: 0
   _keyItem: Cup
   _dialogue: {fileID: 70136638}
@@ -8720,6 +8758,18 @@ MonoBehaviour:
   _awareDistance: 6
   _playerDistance: 0
   _animator: {fileID: 2093899951}
+--- !u!114 &2093899957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093899949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d5ace16f636b34a9b8951d6300a9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2113935994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5920910244212063300, guid: acb4333822e292f42a238ca58b2518ac, type: 3}
@@ -8966,7 +9016,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 907052454}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2442124755734955067, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9008,6 +9058,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2637780517929785281, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5359993
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637780517929785281, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1897225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637780517929785281, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.788
+      objectReference: {fileID: 0}
     - target: {fileID: 3075953229808623233, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
       propertyPath: m_Name
       value: Cup
@@ -9019,7 +9081,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3445420614483365243, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1529568187}
   m_SourcePrefab: {fileID: 100100000, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -9036,6 +9101,7 @@ SceneRoots:
   - {fileID: 1874056762}
   - {fileID: 907052454}
   - {fileID: 287350856}
+  - {fileID: 4820158495984412453}
   - {fileID: 659955868}
   - {fileID: 624050941}
   - {fileID: 2093899948}
