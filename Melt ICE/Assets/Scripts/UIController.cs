@@ -51,6 +51,8 @@ public class UIController : MonoBehaviour
     // dialogue logic
     public void ShowDialogue(string dialogue)
     {
+        Debug.Log("show dialogue triggered");
+
         _dialogueBox.SetActive(true);
 
         _npcText.enabled = true;

@@ -11,6 +11,8 @@ public enum NPCSpeech
 
 public class NPC : Interactable
 {
+    public NPCSpeech _npcReaction;
+
     // dialogue member variables
     [SerializeField] private UIController _dialogue;
     public DialogueNode _dialogueStartNode;
@@ -24,7 +26,6 @@ public class NPC : Interactable
     [SerializeField] private float _playerDistance;
     [SerializeField] private Animator _animator;
     [SerializeField] private Player _player;
-    private NPCSpeech _npcReaction;
 
     private void Start()
     {
@@ -36,12 +37,12 @@ public class NPC : Interactable
         _playerDistance = Vector3.Distance(_player.transform.position, transform.position);
         RunState(_animator);
         NPCState();
-
-
     }
 
     private void AdvanceDialogue()
     {
+        Debug.Log("advanced dialogue");
+
         _runningDialogue = true;
 
         if (_currentLine < _currentNode._lines.Length)
@@ -65,6 +66,8 @@ public class NPC : Interactable
 
     private void EndDialogue()
     {
+        Debug.Log("ended dialogue");
+
         _runningDialogue = false;
         _waitingForPlayerResponse = false;
         _currentNode = _dialogueStartNode;
@@ -82,28 +85,36 @@ public class NPC : Interactable
     }
 
 
-
-    public void NPCState()
+    public void SetToTalking() // called by gamecontroller when interacts with npc
     {
-        if (_playerDistance <= _awareDistance && (Input.GetKeyDown(KeyCode.E) || _runningDialogue))
+        Debug.Log("set to talking");
+
+        _npcReaction = NPCSpeech.Talking;
+        _runningDialogue = true;
+    }
+
+    private void NPCState()
+    {
+        if (_npcReaction == NPCSpeech.Talking && !_runningDialogue) // if done talking
         {
-            _npcReaction = NPCSpeech.Talking;
+            Debug.Log("npc state to idle");
 
-            if (!_waitingForPlayerResponse)
-                AdvanceDialogue();
-            
+            _npcReaction = NPCSpeech.Idle;
         }
-
-        else if (_playerDistance <= _awareDistance)
+        if (_npcReaction == NPCSpeech.Talking)
+        {
+            // if it's talking, don't change state
+        }
+        else if (_playerDistance <= _awareDistance) // if in interact distance
         {
             _npcReaction = NPCSpeech.Aware;
         }
-        
-        else
+        else // not in interact distance
         {
             _npcReaction = NPCSpeech.Idle;
         }
     }
+
 
     public void Talk()
     {

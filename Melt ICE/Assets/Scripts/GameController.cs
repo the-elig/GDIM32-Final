@@ -52,7 +52,10 @@ public class GameController : MonoBehaviour
         }
         else // if the interactable is an NPC
         {
-
+            if (inter.GetComponent<NPC>()._npcReaction != NPCSpeech.Talking)
+            {
+                inter.GetComponent<NPC>().SetToTalking();
+            }
         }
     }
 }
