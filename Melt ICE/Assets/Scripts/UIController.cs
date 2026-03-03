@@ -11,6 +11,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text _notifText;
     private bool _boxActive = false;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 
     // Start is called before the first frame update
     void Start()
