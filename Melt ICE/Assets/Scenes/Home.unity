@@ -2369,7 +2369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &624050940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8649,6 +8649,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b977e4b0073124dea9c9e8079a1b6daf, type: 2}
+    - target: {fileID: 5866666021909216657, guid: d9f67704696834f30bd70f63b70b3615, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8707,7 +8711,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Sister
   _npcReaction: 0
-  _playerHasKeyItem: 0
   _keyItem: Cup
   _dialogue: {fileID: 70136638}
   _dialogueStartingNodes:
