@@ -1655,7 +1655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Outside Door
-  _prefab: {fileID: 0}
   _sceneName: Home
   _position: {x: 2, y: 1, z: 2}
 --- !u!1 &376892320 stripped
@@ -2192,7 +2191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
+  m_Color: {r: 0.6273585, g: 0.6273585, b: 0.6273585, a: 0.827451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2890,6 +2889,7 @@ MonoBehaviour:
   _spawnUp: 1
   _spawnRight: -0.2
   _inventory: []
+  _inventoryString: []
 --- !u!82 &696282165
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8707,12 +8707,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Sister
   _npcReaction: 0
+  _playerHasKeyItem: 0
+  _keyItem: Cup
   _dialogue: {fileID: 70136638}
+  _dialogueStartingNodes:
+  - {fileID: 11400000, guid: f88057a96bb01f94bb8d56c0fef36867, type: 2}
+  - {fileID: 11400000, guid: 97bbb4fb56c7b8048a0143e039ee5984, type: 2}
   _dialogueStartNode: {fileID: 11400000, guid: f88057a96bb01f94bb8d56c0fef36867, type: 2}
   _awareDistance: 6
   _playerDistance: 0
   _animator: {fileID: 2093899951}
-  _player: {fileID: 696282164}
 --- !u!1 &2113935994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5920910244212063300, guid: acb4333822e292f42a238ca58b2518ac, type: 3}

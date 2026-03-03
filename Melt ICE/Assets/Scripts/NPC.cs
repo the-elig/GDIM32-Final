@@ -13,9 +13,13 @@ public enum NPCSpeech
 public class NPC : Interactable
 {
     public NPCSpeech _npcReaction;
+    private bool _playerHasKeyItem;
+
+    [SerializeField] private string _keyItem; // assigned individually to NPC
 
     // dialogue member variables
     [SerializeField] private UIController _dialogue;
+    public DialogueNode[] _dialogueStartingNodes; // list of starting dialogue depending on _hasKeyItem 
     public DialogueNode _dialogueStartNode;
     private DialogueNode _currentNode;
     private int _currentLine = 0;
@@ -25,20 +29,31 @@ public class NPC : Interactable
     [SerializeField] private float _awareDistance = 6.0f;
     [SerializeField] private float _playerDistance;
     [SerializeField] private Animator _animator;
-    [SerializeField] private Player _player;
 
     private void Start()
     {
+        /*
+        if (_playerHasKeyItem)
+        {
+            _dialogueStartNode = _dialogueStartingNodes[1];
+        }
+        else
+        {
+            _dialogueStartNode = _dialogueStartingNodes[0];
+        }
+        
         _currentNode = _dialogueStartNode;
+        */
     }
 
     void Update()
     {
-        _playerDistance = Vector3.Distance(_player.transform.position, transform.position);
+        _playerHasKeyItem = Player.Instance._inventoryString.Contains(_keyItem); //updates _hasKeyItem
+        _playerDistance = Vector3.Distance(Player.Instance.transform.position, transform.position);
         RunState(_animator);
         NPCState();
 
-        if (_npcReaction == NPCSpeech.Talking 
+        if (_npcReaction == NPCSpeech.Talking // if talking and get continue input
             && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
         {
             AdvanceDialogue();
@@ -49,6 +64,16 @@ public class NPC : Interactable
     {
         Debug.Log("set to talking");
 
+        if (_playerHasKeyItem)
+        {
+            _dialogueStartNode = _dialogueStartingNodes[1];
+        }
+        else
+        {
+            _dialogueStartNode = _dialogueStartingNodes[0];
+        }
+
+        _currentNode = _dialogueStartNode;
         _npcReaction = NPCSpeech.Talking;
         _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
     }

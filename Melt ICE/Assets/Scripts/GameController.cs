@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
 
             inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
             Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
+            Player.Instance._inventoryString.Add(inter.GetComponent<Item>().GetName()); //add to inventory list
 
         }
         else if (inter.GetComponent<Door>() != null) // if the interactable is a door

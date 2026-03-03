@@ -39,7 +39,8 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
     private float _rotationY;
 
 
-    [SerializeField] public List<GameObject> _inventory;
+    public List<GameObject> _inventory;
+    public List<string> _inventoryString;
 
 
     void Start()
@@ -72,8 +73,8 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             Cursor.visible = true;
         }
 
-            // player movement
-            float forwardbackwards = Input.GetAxis("Vertical") * _moveSpeed * Time.deltaTime;
+        // player movement
+        float forwardbackwards = Input.GetAxis("Vertical") * _moveSpeed * Time.deltaTime;
         float leftright = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
 
         transform.Translate(0, 0, forwardbackwards);

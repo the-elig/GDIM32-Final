@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b6eab7e35aaf646969ae37aa4fefec, type: 3}
   m_Name: DialogueLine_thanks
   m_EditorClassIdentifier: 
-  npcName: 
+  npcName: Sister
   _lines:
   - Thanks!
   _playerReplyOptions: []

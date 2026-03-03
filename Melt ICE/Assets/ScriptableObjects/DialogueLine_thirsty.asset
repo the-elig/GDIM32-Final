@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: SIster
   _lines:
-  - I'm thirsty. Can you grab me that cup?
+  - I'm thirsty. Can you get me some water?
   _playerReplyOptions:
   - Why should I?
   - Okay.
