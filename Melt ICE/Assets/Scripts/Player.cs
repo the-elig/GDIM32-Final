@@ -100,8 +100,6 @@ public class Player : MonoBehaviour
         {
             // if looking at something and pressed E, invoke event
             Interacted?.Invoke(inter);
-            string _name = inter.GetComponent<Interactable>().GetName();
-            UI._inventoryText.text = $"{_name}";
         }
 
         EquippedItemOne();
