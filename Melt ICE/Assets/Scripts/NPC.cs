@@ -130,6 +130,8 @@ public class NPC : Interactable
         else if (_playerDistance <= _awareDistance) // if in interact distance
         {
             _npcReaction = NPCSpeech.Aware;
+            transform.LookAt(Player.Instance.transform);
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
         }
         else // not in interact distance
         {

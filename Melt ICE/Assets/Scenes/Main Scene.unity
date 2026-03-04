@@ -3082,6 +3082,115 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
+--- !u!1001 &4287849470416751545
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 41.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9132234
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.40745935
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 48.091
+      objectReference: {fileID: 0}
+    - target: {fileID: 58846037780961224, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 564797402320733220, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      propertyPath: m_Name
+      value: close-up-handsome-professional-man-cross-arms-chest-looking-confident-camera-smiling-determined-standing-against-white-background
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 564797402320733220, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4287849470416751547}
+    - targetCorrespondingSourceObject: {fileID: 564797402320733220, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4287849470416751548}
+  m_SourcePrefab: {fileID: 100100000, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+--- !u!1 &4287849470416751546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 564797402320733220, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
+  m_PrefabInstance: {fileID: 4287849470416751545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4287849470416751547
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4287849470416751546}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2802dc9f7749e4476b1f511ba5835a96, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4287849470416751548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4287849470416751546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0900c5a4e96c80a49b188b29e33df819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _npcReaction: 0
+  _keyItem: 
+  _dialogue: {fileID: 0}
+  _dialogueStartingNodes: []
+  _dialogueStartNode: {fileID: 0}
+  _awareDistance: 6
+  _playerDistance: 0
+  _animator: {fileID: 4287849470416751547}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3092,3 +3201,4 @@ SceneRoots:
   - {fileID: 2062004295}
   - {fileID: 223712690}
   - {fileID: 283651535}
+  - {fileID: 4287849470416751545}
