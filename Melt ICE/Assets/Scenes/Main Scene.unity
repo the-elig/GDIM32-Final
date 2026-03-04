@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scene: Main Scene
   _sceneName: Home
   _position: {x: -3, y: 1, z: 10.5}
 --- !u!65 &283651539

@@ -331,6 +331,7 @@ MonoBehaviour:
   - {fileID: 0}
   _NPCscript: {fileID: 2093899955}
   UI: {fileID: 659955869}
+  DestroyScript: {fileID: 0}
 --- !u!4 &70136636
 Transform:
   m_ObjectHideFlags: 0
@@ -511,6 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scene: Home
   _sceneName: Home
   _position: {x: 2, y: 1, z: 3}
 --- !u!1001 &89336161
@@ -1656,6 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scene: Home
   _sceneName: Home
   _position: {x: 2, y: 1, z: 2}
 --- !u!1 &376892320 stripped
@@ -3385,6 +3388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scene: Home
   _sceneName: Main Scene
   _position: {x: 15.93, y: 0.91, z: 17.78}
 --- !u!65 &816586387
@@ -6160,6 +6164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scene: Home
   _sceneName: Home
   _position: {x: 2, y: 1, z: 5}
 --- !u!4 &1445218540 stripped
@@ -8887,6 +8892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0900c5a4e96c80a49b188b29e33df819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scene: Home
   _npcReaction: 0
   _keyItem: Cup
   _dialogue: {fileID: 70136638}
@@ -9212,6 +9218,10 @@ PrefabInstance:
     - target: {fileID: 3075953229808623233, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
       propertyPath: m_Name
       value: Cup
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678138682119378059, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
+      propertyPath: Scene
+      value: Home
       objectReference: {fileID: 0}
     - target: {fileID: 8066323594399631217, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
       propertyPath: _prefab

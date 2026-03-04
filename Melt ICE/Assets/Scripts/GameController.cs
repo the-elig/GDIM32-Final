@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private NPC[] _NPCs;
     [SerializeField] private NPC _NPCscript;
     [SerializeField] private UIController UI;
+    [SerializeField] private DontDestroy DestroyScript;
     public delegate void PickedUpDelegate();
 
     public event PickedUpDelegate PickedUp;
