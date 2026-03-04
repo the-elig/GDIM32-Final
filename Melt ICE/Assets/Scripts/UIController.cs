@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text _interactText;
     [SerializeField] public TMP_Text _inventoryText;
     [SerializeField] private GameObject _inventorybox;
-    [SerializeField] private TMP_Text _notifText;
+    [SerializeField] public GameObject _notifText;
     private bool _boxActive = false;
 
     // dialogue UI
@@ -89,7 +89,7 @@ public class UIController : MonoBehaviour
     {
         _dialogueBox.SetActive(false);
         _playerOptions.SetActive(false);
-        gameObject.SetActive(false);
+        _npcText.enabled = false;
 
         Player.Instance.SetCanMoveCamera(true);
     }

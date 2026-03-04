@@ -10,6 +10,7 @@ public enum _objective
 public class GameController : MonoBehaviour
 {
     [SerializeField] private NPC[] _NPCs;
+    [SerializeField] private NPC _NPCscript;
     [SerializeField] private UIController UI;
     public delegate void PickedUpDelegate();
 
@@ -32,11 +33,21 @@ public class GameController : MonoBehaviour
             // if the interactable is an item
             PickedUp?.Invoke();
 
+            float _time = 3.0f;
+            _time -= Time.deltaTime;
             inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
             Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
             string _name = inter.GetComponent<Item>().GetName();
+            Player.Instance._inventoryString.Add(_name);
             UI._inventoryText.text = $"{_name}";
-            Debug.Log("You picked up item");
+            if ( _time > 0 )
+            {
+                UI._notifText.SetActive(true);
+            }
+            else
+            {
+                UI._notifText.SetActive(false);
+            }
 
         }
         else if (inter.GetComponent<Door>() != null) // if the interactable is a door
@@ -52,7 +63,7 @@ public class GameController : MonoBehaviour
                 inter.GetComponent<Door>().GetPosition(), Quaternion.identity);
 
         }
-        else // if the interactable is an NPC
+        else // Interacting with NPC
         {
             if (inter.GetComponent<NPC>()._npcReaction != NPCSpeech.Talking)
             {
