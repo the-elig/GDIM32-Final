@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
             PickedUp?.Invoke();
 
             inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
-            Locator.Instance.Player._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
+            Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
             string _name = inter.GetComponent<Item>().GetName();
             UI._inventoryText.text = $"{_name}";
             Debug.Log("You picked up item");
