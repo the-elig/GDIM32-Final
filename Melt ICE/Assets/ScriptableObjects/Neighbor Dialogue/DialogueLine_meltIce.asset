@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b6eab7e35aaf646969ae37aa4fefec, type: 3}
+  m_Name: DialogueLine_meltIce
+  m_EditorClassIdentifier: 
+  npcName: 
+  _lines:
+  - Yeah, I got a flamethrower in the back! There should be a key around here somewhere!
+  _playerReplyOptions:
+  - Thank you!
+  _npcReplies:
+  - {fileID: 11400000, guid: 36f8bfb5261645f4082cbd277f837096, type: 2}

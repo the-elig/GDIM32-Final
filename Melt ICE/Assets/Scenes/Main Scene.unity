@@ -3245,10 +3245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _npcReaction: 0
-  _keyItem: 
-  _dialogue: {fileID: 0}
-  _dialogueStartingNodes: []
-  _dialogueStartNode: {fileID: 0}
+  _playerHasKeyItem: 0
+  _dControl: {fileID: 0}
+  _keyItem: Flame Thrower
+  _dialogueStartingNodes:
+  - {fileID: 11400000, guid: abc180366476dfe45af0da9de2007d12, type: 2}
   _awareDistance: 6
   _playerDistance: 0
   _animator: {fileID: 4287849470416751547}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b6eab7e35aaf646969ae37aa4fefec, type: 3}
+  m_Name: DialogueLine_greeting
+  m_EditorClassIdentifier: 
+  npcName: 
+  _lines:
+  - Howdy! What's up?
+  _playerReplyOptions:
+  - My sister wants some water and I can't find any.
+  - I dunno.
+  _npcReplies:
+  - {fileID: 11400000, guid: 3e8a3bef21162f84a892e9c1faff0111, type: 2}
+  - {fileID: 11400000, guid: 313d7aec6cf252849915f97b93820fc8, type: 2}
