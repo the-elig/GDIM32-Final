@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private NPC[] _NPCs;
     [SerializeField] private NPC _NPCscript;
     [SerializeField] private UIController UI;
+    [SerializeField] private DialogueController _dialogue;
     public delegate void PickedUpDelegate();
 
     public event PickedUpDelegate PickedUp;
@@ -25,8 +26,6 @@ public class GameController : MonoBehaviour
 
     private void PlayerInteracted(GameObject inter)
     {
-
-
         // find out if inter is an item or NPC and act accordingly
         if (inter.GetComponent<Door>() == null && inter.GetComponent<NPC>() == null)
         {
@@ -67,8 +66,13 @@ public class GameController : MonoBehaviour
         {
             if (inter.GetComponent<NPC>()._npcReaction != NPCSpeech.Talking)
             {
-                inter.GetComponent<NPC>().SetToTalking();
+                Debug.Log("talking with npc");
+                _dialogue.Talk(inter.GetComponent<NPC>());
                 Player.Instance.SetCanMoveCamera(false);
+            }
+            else
+            {
+                Debug.Log("something has gone very wrong.");
             }
         }
     }

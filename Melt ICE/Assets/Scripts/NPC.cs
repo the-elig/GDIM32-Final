@@ -12,113 +12,36 @@ public enum NPCSpeech
 public class NPC : Interactable
 {
     public NPCSpeech _npcReaction;
-    private bool _playerHasKeyItem;
+    public bool _playerHasKeyItem;
 
-    [SerializeField] private string _keyItem; // assigned individually to NPC
 
     // dialogue member variables
-    [SerializeField] private UIController _dialogue;
+    [SerializeField] private DialogueController _dControl;
+    [SerializeField] private string _keyItem; // assigned individually to NPC
     public DialogueNode[] _dialogueStartingNodes; // list of starting dialogue depending on _hasKeyItem 
-    public DialogueNode _dialogueStartNode;
-    private DialogueNode _currentNode;
-    private int _currentLine = 0;
-    private bool _waitingForPlayerResponse;
+    
 
     // animation member variables
     [SerializeField] private float _awareDistance = 6.0f;
     [SerializeField] private float _playerDistance;
     [SerializeField] private Animator _animator;
 
-    private void Start()
-    {
-        /*
-        if (_playerHasKeyItem)
-        {
-            _dialogueStartNode = _dialogueStartingNodes[1];
-        }
-        else
-        {
-            _dialogueStartNode = _dialogueStartingNodes[0];
-        }
-        
-        _currentNode = _dialogueStartNode;
-        */
-    }
 
     void Update()
     {
         _playerHasKeyItem = Player.Instance._inventoryString.Contains(_keyItem); //updates _hasKeyItem
         _playerDistance = Vector3.Distance(Player.Instance.transform.position, transform.position);
+        
         RunState(_animator);
         NPCState();
 
         if (_npcReaction == NPCSpeech.Talking // if talking and get continue input
             && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
         {
-            AdvanceDialogue();
+            _dControl.AdvanceDialogue();
         }
     }
 
-    public void SetToTalking() // called by gamecontroller when interacts with npc
-    {
-        Debug.Log("set to talking");
-
-        if (_playerHasKeyItem)
-        {
-            _dialogueStartNode = _dialogueStartingNodes[1];
-        }
-        else
-        {
-            _dialogueStartNode = _dialogueStartingNodes[0];
-        }
-
-        _currentNode = _dialogueStartNode;
-        _npcReaction = NPCSpeech.Talking;
-        _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
-    }
-
-    private void AdvanceDialogue()
-    {
-        Debug.Log("advanced dialogue");
-        if (_currentLine < _currentNode._lines.Length)
-        {
-            // if we still have NPC lines left, keep playing NPC lines
-            _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
-            _currentLine++;
-        }
-        else if (_currentNode._playerReplyOptions != null && _currentNode._playerReplyOptions.Length > 0)
-        {
-            // show player dialogue options, if there are any
-            _waitingForPlayerResponse = true;
-            _dialogue.ShowPlayerOptions(_currentNode._playerReplyOptions);
-        }
-        else
-        {
-            // if there are no NPC or player lines left, close dialogue UI
-            EndDialogue();
-        }
-    }
-
-    public void SelectedOption(int option)
-    {
-        _currentLine = 0;
-        _waitingForPlayerResponse = false;
-
-        _currentNode = _currentNode._npcReplies[option];
-        AdvanceDialogue();
-    }
-
-    private void EndDialogue()
-    {
-        Debug.Log("ended dialogue");
-
-        _npcReaction = NPCSpeech.Idle; // put state off talking
-        _waitingForPlayerResponse = false;
-        _currentNode = _dialogueStartNode;
-        _currentLine = 0;
-
-        _dialogue.HideDialogue();
-    }
 
 
     private void NPCState()
@@ -137,6 +60,10 @@ public class NPC : Interactable
         }
     }
 
+    public NPC getNPC()
+    {
+        return this;
+    }
 
     private void RunState(Animator _animator)
     {

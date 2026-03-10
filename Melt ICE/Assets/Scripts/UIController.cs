@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class UIController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject _playerOptions;
     [SerializeField] private TMP_Text _option1;
     [SerializeField] private TMP_Text _option2;
+    [SerializeField] private TMP_Text _option3;
 
     private void Awake()
     {
@@ -82,6 +84,16 @@ public class UIController : MonoBehaviour
         else
         {
             _option2.transform.parent.gameObject.SetActive(false);
+        }
+
+        if (options.Length >= 3)
+        {
+            _option3.transform.parent.gameObject.SetActive(true);
+            _option3.text = options[2];
+        }
+        else
+        {
+            _option3.transform.parent.gameObject.SetActive(false);
         }
     }
 
