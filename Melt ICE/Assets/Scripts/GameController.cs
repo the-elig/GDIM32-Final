@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.LightingExplorerTableColumn;
 public enum _objective
 {
     empty, cup, key, flamethrower
@@ -9,16 +10,17 @@ public enum _objective
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private NPC[] _NPCs;
-    [SerializeField] private NPC _NPCscript;
     [SerializeField] private UIController UI;
     [SerializeField] private DialogueController _dialogue;
-    public delegate void PickedUpDelegate();
+    [SerializeField] private GameObject[] _homeSceneObjects;
+    [SerializeField] private GameObject[] _mainSceneObjects;
+    private string _currentScene;
 
+    public delegate void PickedUpDelegate();
     public event PickedUpDelegate PickedUp;
    
 
-    public void Start()
+    void Start()
     {
         Player.Instance.Interacted += PlayerInteracted;
     }

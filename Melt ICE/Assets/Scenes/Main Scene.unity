@@ -2330,11 +2330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
       propertyPath: m_Name
-      value: Simple_02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
-      propertyPath: m_TagString
-      value: Interactable
+      value: Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3211,7 +3207,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5710cc06e518ace4487a28241fcafd20, type: 3}
---- !u!1001 &2915942494321868921
+--- !u!1001 &867134620076887864
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3219,55 +3215,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 400441669779297843, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
+      propertyPath: m_Name
+      value: Flamethrower
+      objectReference: {fileID: 0}
+    - target: {fileID: 775104405901858591, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
+      propertyPath: _prefab
+      value: 
+      objectReference: {fileID: 400441669779297843, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.034733
+      value: 65.61
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4286054
+      value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.44
+      value: 48.51
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.28087303
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.28087297
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.6489302
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.6489302
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1495715166621537709, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+    - target: {fileID: 8198501291881084403, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676172383164028231, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
-      propertyPath: m_Name
-      value: FlameThrower
+      value: -133.192
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d12a2369f6f924d8da15a97c6b4d53d8, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
 --- !u!1001 &4287849470416751545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3318,7 +3318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 564797402320733220, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
       propertyPath: m_Name
-      value: close-up-handsome-professional-man-cross-arms-chest-looking-confident-camera-smiling-determined-standing-against-white-background
+      value: Neighbor
       objectReference: {fileID: 0}
     - target: {fileID: 564797402320733220, guid: 97cec76f2912348b0996ef4544439f20, type: 3}
       propertyPath: m_TagString
@@ -3379,9 +3379,10 @@ MonoBehaviour:
   _npcReaction: 0
   _playerHasKeyItem: 0
   _dControl: {fileID: 0}
-  _keyItem: Flame Thrower
+  _keyItem: Key
   _dialogueStartingNodes:
   - {fileID: 11400000, guid: abc180366476dfe45af0da9de2007d12, type: 2}
+  - {fileID: 11400000, guid: d8501258e72d40a40894d0dc4447ef83, type: 2}
   _awareDistance: 6
   _playerDistance: 0
   _animator: {fileID: 4287849470416751547}
@@ -3419,4 +3420,4 @@ SceneRoots:
   - {fileID: 283651535}
   - {fileID: 4287849470416751545}
   - {fileID: 1513718119}
-  - {fileID: 2915942494321868921}
+  - {fileID: 867134620076887864}

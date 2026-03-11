@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b6eab7e35aaf646969ae37aa4fefec, type: 3}
-  m_Name: DialogueLine_meltIce
+  m_Name: DialogueLine_hasKey
   m_EditorClassIdentifier: 
   npcName: 
   _lines:
-  - Yeah, I got a flamethrower I can give you if you bring me the key I lost somewhere
-    around here!
-  _playerReplyOptions:
-  - Thank you!
-  _npcReplies:
-  - {fileID: 11400000, guid: 36f8bfb5261645f4082cbd277f837096, type: 2}
+  - You found my key!
+  - The flamethrower should be in the backyard, now.
+  _playerReplyOptions: []
+  _npcReplies: []
