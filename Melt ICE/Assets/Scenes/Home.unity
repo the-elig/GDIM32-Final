@@ -1116,6 +1116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sink
       objectReference: {fileID: 0}
+    - target: {fileID: 3117143589853887644, guid: 246033705ea83904da3ad9af1045c122, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 3477533058483084617, guid: 246033705ea83904da3ad9af1045c122, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2921,7 +2925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab2c05442975c141b6bb1195b4bcf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 3
   _turnSpeed: 3
   _mouseSensitivity: 3
   _interactDistance: 3
