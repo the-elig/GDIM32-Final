@@ -26,6 +26,11 @@ public class NPC : Interactable
     [SerializeField] private float _playerDistance;
     [SerializeField] private Animator _animator;
 
+    private void Start()
+    {
+        _dControl = FindObjectOfType<DialogueController>().GetComponent<DialogueController>();
+
+    }
 
     void Update()
     {

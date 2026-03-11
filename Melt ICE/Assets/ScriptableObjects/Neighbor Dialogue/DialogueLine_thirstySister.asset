@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   _lines:
-  - 'Yeah, it''s been real tough since all the water dried up. Good thing you guys
-    saved that giant ice cube in your back yard. Wish I thought of that. '
+  - 'Yeah, it''s been real tough since all the water dried up. Good thing I have
+    a giant ice cube in my backyard. '
   - Anything else I could help you with?
   _playerReplyOptions:
   - Do you have any way to melt the ice?

@@ -702,7 +702,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 926426291}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2921,7 +2921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab2c05442975c141b6bb1195b4bcf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
+  _moveSpeed: 5
   _turnSpeed: 3
   _mouseSensitivity: 3
   _interactDistance: 3
@@ -5398,7 +5398,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 459638050}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9413,6 +9413,8 @@ SceneRoots:
   - {fileID: 907052454}
   - {fileID: 287350856}
   - {fileID: 4820158495984412453}
-  - {fileID: 659955868}
   - {fileID: 624050941}
   - {fileID: 2093899948}
+  - {fileID: 107556400}
+  - {fileID: 1286729319}
+  - {fileID: 659955868}
