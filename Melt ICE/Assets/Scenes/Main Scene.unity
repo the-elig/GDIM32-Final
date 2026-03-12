@@ -896,6 +896,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2062004295}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &580404449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580404450}
+  m_Layer: 0
+  m_Name: flamethrowerSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &580404450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580404449}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.2819582, y: -0.64845943, z: -0.64845943, w: 0.2819582}
+  m_LocalPosition: {x: 65.61, y: 0.2, z: 48.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -133}
 --- !u!1 &597209965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1578830224910802, guid: 2030e0fa2aadfed4b9f99149cab54c72, type: 3}
@@ -3219,6 +3250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flamethrower
       objectReference: {fileID: 0}
+    - target: {fileID: 400441669779297843, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 775104405901858591, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
       propertyPath: _prefab
       value: 
@@ -3421,3 +3456,4 @@ SceneRoots:
   - {fileID: 4287849470416751545}
   - {fileID: 1513718119}
   - {fileID: 867134620076887864}
+  - {fileID: 580404450}

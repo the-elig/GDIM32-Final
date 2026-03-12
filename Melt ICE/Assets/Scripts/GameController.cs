@@ -12,9 +12,9 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private UIController UI;
     [SerializeField] private DialogueController _dialogue;
-    [SerializeField] private GameObject[] _homeSceneObjects;
-    [SerializeField] private GameObject[] _mainSceneObjects;
-    private string _currentScene;
+    
+    [SerializeField] private GameObject _flamethrower;
+    private bool _spawnedFlamethrower = false;
 
     public delegate void PickedUpDelegate();
     public event PickedUpDelegate PickedUp;
@@ -23,8 +23,24 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Player.Instance.Interacted += PlayerInteracted;
+
     }
 
+    private void Update()
+    {
+        // flamethrower spawning logic
+        if (SceneManager.GetActiveScene().name == "Main Scene"
+           && Player.Instance._inventoryString.Contains("Key") && !_spawnedFlamethrower)
+        {
+            // if in the correct scene and hasKey and the flamethrower hasn't been spawned
+            Vector3 myPosition = new Vector3(65.6100006f, 0.200000003f, 48.5099983f);
+            Quaternion myRotation = new Quaternion(-0.280872971f, -0.648930192f, -0.648930192f, 0.28087303f);
+            
+            Instantiate(_flamethrower, myPosition, myRotation);
+
+            _spawnedFlamethrower = true;
+        }
+    }
 
     private void PlayerInteracted(GameObject inter)
     {
@@ -64,7 +80,7 @@ public class GameController : MonoBehaviour
                 inter.GetComponent<Door>().GetPosition(), Quaternion.identity);
 
         }
-        else // Interacting with NPC
+        else // if the interactable is an NPC
         {
             if (inter.GetComponent<NPC>()._npcReaction != NPCSpeech.Talking)
             {

@@ -328,11 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a39f6674b27ba42a9068b107892265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NPCs:
-  - {fileID: 0}
-  _NPCscript: {fileID: 2093899955}
   UI: {fileID: 659955869}
   _dialogue: {fileID: 70136641}
+  _flamethrower: {fileID: 400441669779297843, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
 --- !u!4 &70136636
 Transform:
   m_ObjectHideFlags: 0
@@ -2791,7 +2789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab2c05442975c141b6bb1195b4bcf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
+  _moveSpeed: 6
   _turnSpeed: 3
   _mouseSensitivity: 3
   _interactDistance: 3
