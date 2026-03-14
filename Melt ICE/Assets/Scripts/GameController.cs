@@ -56,7 +56,8 @@ public class GameController : MonoBehaviour
             Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
             string _name = inter.GetComponent<Item>().GetName();
             Player.Instance._inventoryString.Add(_name);
-            UI._inventoryText.text = $"{_name}";
+            UI._inventoryText.text = UI._inventoryText.text + $"\n{_name}";
+
             if ( _time > 0 )
             {
                 UI._notifText.SetActive(true);
