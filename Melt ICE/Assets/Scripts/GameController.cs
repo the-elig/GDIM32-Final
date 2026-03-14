@@ -28,14 +28,14 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        // flamethrower spawning logic
+        // if in the correct scene and hasKey and the flamethrower hasn't been spawned
         if (SceneManager.GetActiveScene().name == "Main Scene"
            && Player.Instance._inventoryString.Contains("Key") && !_spawnedFlamethrower)
         {
-            // if in the correct scene and hasKey and the flamethrower hasn't been spawned
+           // manual positioning of the flamethrower in the scene
             Vector3 myPosition = new Vector3(65.6100006f, 0.200000003f, 48.5099983f);
             Quaternion myRotation = new Quaternion(-0.280872971f, -0.648930192f, -0.648930192f, 0.28087303f);
-            
+
             Instantiate(_flamethrower, myPosition, myRotation);
 
             _spawnedFlamethrower = true;
