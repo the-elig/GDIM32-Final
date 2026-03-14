@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _flamethrower;
     private bool _spawnedFlamethrower = false;
 
+    [SerializeField] GameObject _waterPuddle;
+
     public delegate void PickedUpDelegate();
     public event PickedUpDelegate PickedUp;
    
@@ -23,7 +25,6 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Player.Instance.Interacted += PlayerInteracted;
-
     }
 
     private void Update()
