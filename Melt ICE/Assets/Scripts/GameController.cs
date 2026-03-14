@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _flamethrower;
     private bool _spawnedFlamethrower = false;
 
-    [SerializeField] GameObject _waterPuddle;
+    [SerializeField] GameObject _waterPuddle;    
 
     public delegate void PickedUpDelegate();
     public event PickedUpDelegate PickedUp;
@@ -41,6 +41,15 @@ public class GameController : MonoBehaviour
 
             _spawnedFlamethrower = true;
         }
+    }
+
+    public void MeltIce(GameObject ice)
+    {
+        ice.SetActive(false);
+
+        Debug.Log("instantiate water puddle");
+
+        Instantiate(_waterPuddle);
     }
 
     private void PlayerInteracted(GameObject inter)

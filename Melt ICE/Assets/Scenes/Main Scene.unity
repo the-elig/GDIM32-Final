@@ -3061,12 +3061,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.940794, y: 3.6480355, z: 3.7854471}
-  m_Center: {x: -0.3214428, y: 1.6696861, z: 0.13727522}
+  m_Size: {x: 6.5358586, y: 3.9081008, z: 4.517348}
+  m_Center: {x: -0.38229668, y: 1.5396423, z: 0.20498337}
 --- !u!1001 &1740121719
 PrefabInstance:
   m_ObjectHideFlags: 0

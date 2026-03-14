@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8198501291881084403}
   - component: {fileID: 775104405901858591}
   - component: {fileID: 1585999583113036234}
+  - component: {fileID: 2714452124901742339}
   m_Layer: 0
   m_Name: FlameThrower
   m_TagString: Interactable
@@ -72,6 +73,21 @@ CapsuleCollider:
   m_Height: 2.5624197
   m_Direction: 0
   m_Center: {x: -0.12980676, y: -0.01867187, z: 0.060892463}
+--- !u!114 &2714452124901742339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400441669779297843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c254f54087c50554a95434cec647bc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flame: {fileID: 8992718440066780665}
+  _ice: {fileID: 0}
+  _gc: {fileID: 0}
 --- !u!1 &2409658159707436445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4998,6 +5014,7 @@ GameObject:
   - component: {fileID: 6766867353505604690}
   - component: {fileID: 8066760808972293793}
   - component: {fileID: 8992718440066780665}
+  - component: {fileID: 340145726738672240}
   m_Layer: 0
   m_Name: VFX_Fire 1
   m_TagString: Untagged
@@ -8609,7 +8626,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -8784,11 +8801,11 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 2
     inside: 1
     outside: 0
@@ -9839,3 +9856,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.690695, y: 64.28784, z: 10.274827}
   m_Center: {x: 0.98502356, y: -28.59386, z: 0.1561986}
+--- !u!114 &340145726738672240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8315754678483412181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c254f54087c50554a95434cec647bc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flame: {fileID: 0}
+  _ice: {fileID: 0}
+  _gc: {fileID: 0}
