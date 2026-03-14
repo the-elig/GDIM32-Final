@@ -27,7 +27,9 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
     [SerializeField] private float _spawnUp;
     [SerializeField] private float _spawnRight;
     private GameObject _itemOne;
-    private bool _oneOut = false;
+    private GameObject _itemTwo;
+    private GameObject _itemThree;
+    private bool _itemOut = false;
 
     private bool _canMoveCamera = true;
 
@@ -98,17 +100,20 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             Interacted?.Invoke(inter);
         }
 
-        EquippedItemOne();
+        EquippedItem();
         
     }
 
-    private void EquippedItemOne()
+    private void EquippedItem()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && _oneOut == false)
+        // Item one spawn
+        if (Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == false && _inventory[0] != null)
         {
             GameObject _itemOne = Instantiate(_inventory[0]);
             _itemOne.SetActive(true);
             _itemOne.transform.SetParent(_cameraTrans);
+            _itemOne.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
+            _itemOut = true;
             //Vector3 _itemOnePos = new Vector3 (1, 1, 1);
             //_itemOne.transform.localPosition = _itemOnePos;
 
@@ -135,13 +140,41 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
         
             
             _itemOne.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
-            _oneOut = true;
+            _itemOut = true;
             
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1) && _oneOut == true)
+        else if (Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == true)
         {
             Destroy(GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).gameObject);
-            _oneOut = false;
+            _itemOut = false;
+        }
+        // Item two spawn
+        if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == false && _inventory[1] != null)
+        {
+            GameObject _itemTwo = Instantiate(_inventory[1]);
+            _itemTwo.SetActive(true);
+            _itemTwo.transform.SetParent(_cameraTrans);
+            _itemTwo.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
+            _itemOut = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == true)
+        {
+            Destroy(GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).gameObject);
+            _itemOut = false;
+        }
+        // Item three spawn
+        if (Input.GetKeyDown(KeyCode.Alpha3) && _itemOut == false && _inventory[2] != null)
+        {
+            GameObject _itemThree = Instantiate(_inventory[2]);
+            _itemThree.SetActive(true);
+            _itemThree.transform.SetParent(_cameraTrans);
+            _itemThree.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
+            _itemOut = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && _itemOut == true)
+        {
+            Destroy(GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).gameObject);
+            _itemOut = false;
         }
     }
 

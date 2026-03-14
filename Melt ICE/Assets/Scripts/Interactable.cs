@@ -4,8 +4,18 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    private void Awake()
+    void Awake()
     {
+        for (int i = 0; i < Object.FindObjectsOfType<DontDestroy>().Length; i++)
+        {
+            if (Object.FindObjectsOfType<DontDestroy>()[i] != this)
+            {
+                if (Object.FindObjectsOfType<DontDestroy>()[i].name == gameObject.name)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
         DontDestroyOnLoad(gameObject);
     }
 }
