@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4858584549502416283}
   - component: {fileID: 7121076249121735526}
   - component: {fileID: 4422371530865293159}
+  - component: {fileID: 5161723668102369870}
   m_Layer: 0
   m_Name: Water puddle
   m_TagString: Interactable
@@ -107,3 +108,17 @@ CapsuleCollider:
   m_Height: 103.434425
   m_Direction: 1
   m_Center: {x: 0.0000000504415, y: 0.0000052173864, z: -0.00000009842079}
+--- !u!114 &5161723668102369870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5281440334952667464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66e8444760c0474da313dd54f729f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Puddle
+  _prefab: {fileID: 5281440334952667464}

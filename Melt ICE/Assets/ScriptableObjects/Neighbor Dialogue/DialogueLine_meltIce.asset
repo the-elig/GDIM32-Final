@@ -17,6 +17,8 @@ MonoBehaviour:
   - Yeah, I got a flamethrower I can give you if you bring me the key I lost somewhere
     around here!
   _playerReplyOptions:
+  - What happened to the water?
   - Thank you!
   _npcReplies:
+  - {fileID: 11400000, guid: d2717d425a5cc1c418e1f537740cf226, type: 2}
   - {fileID: 11400000, guid: 36f8bfb5261645f4082cbd277f837096, type: 2}

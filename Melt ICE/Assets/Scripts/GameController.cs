@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
 
     private void PlayerInteracted(GameObject inter)
     {
-        // find out if inter is an item or NPC and act accordingly
+        // find out if inter is an item, door, or NPC and act accordingly
         if (inter.GetComponent<Door>() == null && inter.GetComponent<NPC>() == null)
         {
             // if the interactable is an item
