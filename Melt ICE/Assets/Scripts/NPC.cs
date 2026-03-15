@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum NPCSpeech
 {
@@ -25,6 +26,7 @@ public class NPC : Interactable
     [SerializeField] private float _awareDistance = 6.0f;
     [SerializeField] private float _playerDistance;
     [SerializeField] private Animator _animator;
+    [SerializeField] private string _SceneName;
 
     private void Start()
     {
@@ -44,6 +46,11 @@ public class NPC : Interactable
             && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
         {
             _dControl.AdvanceDialogue();
+        }
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (_SceneName != currentSceneName)
+        {
+            gameObject.SetActive(false);
         }
     }
 

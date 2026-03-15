@@ -41,6 +41,19 @@ public class GameController : MonoBehaviour
 
             _spawnedFlamethrower = true;
         }
+        for (int i = 0; i < Player.Instance._inventoryString.Count ; i++)
+        {
+            string _objectName = Player.Instance._inventoryString[i];
+            GameObject[] _targets = GameObject.FindGameObjectsWithTag("Interactable");
+            foreach (GameObject _target in _targets) 
+            { 
+                string _targetName = _target.name;
+                if (_objectName == _targetName)
+                { 
+                    Destroy (_target);
+                }
+            }
+        }
     }
 
     public void MeltIce(GameObject ice)
@@ -62,8 +75,8 @@ public class GameController : MonoBehaviour
 
             float _time = 3.0f;
             _time -= Time.deltaTime;
-            inter.gameObject.SetActive(false); //remove from scene to prevent further interaction
             Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
+            Destroy(inter.gameObject); //remove from scene to prevent further interaction
             string _name = inter.GetComponent<Item>().GetName();
             Player.Instance._inventoryString.Add(_name);
             UI._inventoryText.text = UI._inventoryText.text + $"\n{_name}";
