@@ -128,20 +128,10 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
 
             //}
             
-           
-            
-            
             Vector3 _correctPerspective = new Vector3(transform.position.x, transform.position.y, 0);
             Quaternion rotate = Quaternion.Euler(_correctPerspective);
 
-            _itemOne.transform.SetLocalPositionAndRotation(_itemOne.transform.localPosition, rotate); 
-            
-            
-        
-            
-            _itemOne.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
-            _itemOut = true;
-            
+            _itemOne.transform.SetLocalPositionAndRotation(_itemOne.transform.localPosition, rotate);             
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == true)
         {
@@ -156,6 +146,11 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             _itemTwo.transform.SetParent(_cameraTrans);
             _itemTwo.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
             _itemOut = true;
+            Vector3 _correctPerspectiveTwo = new Vector3(transform.position.x, transform.position.y, 0);
+            Quaternion rotate = Quaternion.Euler(_correctPerspectiveTwo);
+
+            _itemTwo.transform.SetLocalPositionAndRotation(_itemTwo.transform.localPosition, rotate); 
+
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == true)
         {
@@ -170,6 +165,10 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             _itemThree.transform.SetParent(_cameraTrans);
             _itemThree.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
             _itemOut = true;
+            Vector3 _correctPerspectiveThree = new Vector3(transform.position.x, transform.position.y, 0);
+            Quaternion rotate = Quaternion.Euler(_correctPerspectiveThree);
+
+            _itemThree.transform.SetLocalPositionAndRotation(_itemThree.transform.localPosition, rotate); 
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3) && _itemOut == true)
         {
