@@ -149,7 +149,7 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             _itemOut = false;
         }
         // Item two spawn
-        if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == false && _inventory[1] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == false &&  _inventory[1] != null)
         {
             GameObject _itemTwo = Instantiate(_inventory[1]);
             _itemTwo.SetActive(true);

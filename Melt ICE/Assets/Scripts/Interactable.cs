@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    void Awake()
+    public bool _hasInteracted = false;
+
+    private void Update()
     {
-        for (int i = 0; i < Object.FindObjectsOfType<DontDestroy>().Length; i++)
+        if (_hasInteracted == true && gameObject.activeSelf == true)
         {
-            if (Object.FindObjectsOfType<DontDestroy>()[i] != this)
-            {
-                if (Object.FindObjectsOfType<DontDestroy>()[i].name == gameObject.name)
-                {
-                    Destroy(gameObject);
-                }
-            }
+            Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
+
 }
 
