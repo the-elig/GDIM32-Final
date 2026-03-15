@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _flamethrower;
     private bool _spawnedFlamethrower = false;
 
+    [SerializeField] GameObject _waterPuddle;    
+
     public delegate void PickedUpDelegate();
     public event PickedUpDelegate PickedUp;
    
@@ -23,7 +25,6 @@ public class GameController : MonoBehaviour
     void Start()
     {
         Player.Instance.Interacted += PlayerInteracted;
-
     }
 
     private void Update()
@@ -55,9 +56,18 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void MeltIce(GameObject ice)
+    {
+        ice.SetActive(false);
+
+        Debug.Log("instantiate water puddle");
+
+        Instantiate(_waterPuddle);
+    }
+
     private void PlayerInteracted(GameObject inter)
     {
-        // find out if inter is an item or NPC and act accordingly
+        // find out if inter is an item, door, or NPC and act accordingly
         if (inter.GetComponent<Door>() == null && inter.GetComponent<NPC>() == null)
         {
             // if the interactable is an item

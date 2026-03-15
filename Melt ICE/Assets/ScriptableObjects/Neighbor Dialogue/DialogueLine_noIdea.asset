@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b6eab7e35aaf646969ae37aa4fefec, type: 3}
-  m_Name: DialogueLine_waterGone
+  m_Name: DialogueLine_noIdea
   m_EditorClassIdentifier: 
   npcName: 
   _lines:
-  - It dried up.
+  - I have no idea what you're talking about.
   - Anything else I can help you with?
   _playerReplyOptions:
-  - Do you have any way to melt the ice?
-  - What's with the screaming birds?
-  - Thank you!
+  - My sister wants some water and I can't find any.
+  - I dunno.
   _npcReplies:
-  - {fileID: 11400000, guid: f9b42cc53c305b04c9ea369938468980, type: 2}
-  - {fileID: 11400000, guid: 9b2e027143d440740b5a83e581b28136, type: 2}
-  - {fileID: 11400000, guid: 36f8bfb5261645f4082cbd277f837096, type: 2}
+  - {fileID: 11400000, guid: 3e8a3bef21162f84a892e9c1faff0111, type: 2}
+  - {fileID: 11400000, guid: 313d7aec6cf252849915f97b93820fc8, type: 2}

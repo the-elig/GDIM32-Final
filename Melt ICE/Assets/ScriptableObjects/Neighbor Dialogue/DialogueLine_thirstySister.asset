@@ -20,6 +20,8 @@ MonoBehaviour:
   _playerReplyOptions:
   - Do you have any way to melt the ice?
   - What happened to the water?
+  - What's with the screaming birds?
   _npcReplies:
   - {fileID: 11400000, guid: f9b42cc53c305b04c9ea369938468980, type: 2}
   - {fileID: 11400000, guid: d2717d425a5cc1c418e1f537740cf226, type: 2}
+  - {fileID: 11400000, guid: 9b2e027143d440740b5a83e581b28136, type: 2}
