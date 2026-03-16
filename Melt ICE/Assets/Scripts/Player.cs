@@ -112,7 +112,7 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
 
 
         // Item one spawn
-        if (Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == false && _inventory[0] != null)
+        if (_inventory[0] != null && Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == false)
         {
             GameObject _itemOne = Instantiate(_inventory[0], _cameraTrans);
             _itemOne.SetActive(true);
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             _itemOut = false;
         }
         // Item two spawn
-        if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == false &&  _inventory[1] != null)
+        if (_inventory[1] != null && Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == false)
         {
             GameObject _itemTwo = Instantiate(_inventory[1], _cameraTrans);
             _itemTwo.SetActive(true);
@@ -150,7 +150,7 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             _itemOut = false;
         }
         // Item three spawn
-        if (Input.GetKeyDown(KeyCode.Alpha3) && _itemOut == false && _inventory[2] != null)
+        if (_inventory[2] != null && Input.GetKeyDown(KeyCode.Alpha3) && _itemOut == false)
         {
             Debug.Log("3 pressed");
             GameObject _itemThree = Instantiate(_inventory[2], _cameraTrans);
