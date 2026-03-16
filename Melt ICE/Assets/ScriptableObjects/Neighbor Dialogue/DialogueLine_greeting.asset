@@ -17,7 +17,7 @@ MonoBehaviour:
   - Howdy! What's up?
   _playerReplyOptions:
   - My sister wants some water and I can't find any.
-  - What's with the screaming birds?
+  - What's with the birds?
   - I dunno.
   _npcReplies:
   - {fileID: 11400000, guid: 3e8a3bef21162f84a892e9c1faff0111, type: 2}

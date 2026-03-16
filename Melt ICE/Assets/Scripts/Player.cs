@@ -106,32 +106,29 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
 
     private void EquippedItem()
     {
+        // item visual position/rotation
+        Vector3 myPosition = new Vector3(0.4f, -0.4f, 0.7f);
+        Quaternion myRotation = new Quaternion(0, 0, 0, 1);
+
+
         // Item one spawn
         if (Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == false && _inventory[0] != null)
         {
-            GameObject _itemOne = Instantiate(_inventory[0]);
+            GameObject _itemOne = Instantiate(_inventory[0], _cameraTrans);
             _itemOne.SetActive(true);
-            _itemOne.transform.SetParent(_cameraTrans);
-            _itemOne.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
             _itemOut = true;
-            //Vector3 _itemOnePos = new Vector3 (1, 1, 1);
-            //_itemOne.transform.localPosition = _itemOnePos;
-
-            //this is to get the item to spawn in at the correct angle
             
+            _itemOne.transform.SetLocalPositionAndRotation(myPosition, myRotation);
+
+
             //if(_itemOne.name == "FlameThrower")
             //{
-                //Vector3 _correctPerspective = new Vector3(transform.rotation.x, 0, 0);
-                //Quaternion rotate = Quaternion.Euler(_correctPerspective);
-                //_itemOne.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, 0, 0);
-                //_itemOne.transform.SetLocalPositionAndRotation(_itemOne.transform.localPosition, rotate);
+            //Vector3 _correctPerspective = new Vector3(transform.rotation.x, 0, 0);
+            //Quaternion rotate = Quaternion.Euler(_correctPerspective);
+            //_itemOne.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, 0, 0);
+            //_itemOne.transform.SetLocalPositionAndRotation(_itemOne.transform.localPosition, rotate);
 
             //}
-            
-            Vector3 _correctPerspective = new Vector3(transform.position.x, transform.position.y, 0);
-            Quaternion rotate = Quaternion.Euler(_correctPerspective);
-
-            _itemOne.transform.SetLocalPositionAndRotation(_itemOne.transform.localPosition, rotate);             
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == true)
         {
@@ -141,16 +138,11 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
         // Item two spawn
         if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == false &&  _inventory[1] != null)
         {
-            GameObject _itemTwo = Instantiate(_inventory[1]);
+            GameObject _itemTwo = Instantiate(_inventory[1], _cameraTrans);
             _itemTwo.SetActive(true);
-            _itemTwo.transform.SetParent(_cameraTrans);
-            _itemTwo.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
             _itemOut = true;
-            Vector3 _correctPerspectiveTwo = new Vector3(transform.position.x, transform.position.y, 0);
-            Quaternion rotate = Quaternion.Euler(_correctPerspectiveTwo);
 
-            _itemTwo.transform.SetLocalPositionAndRotation(_itemTwo.transform.localPosition, rotate); 
-
+            _itemTwo.transform.SetLocalPositionAndRotation(myPosition, myRotation);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == true)
         {
@@ -160,15 +152,12 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
         // Item three spawn
         if (Input.GetKeyDown(KeyCode.Alpha3) && _itemOut == false && _inventory[2] != null)
         {
-            GameObject _itemThree = Instantiate(_inventory[2]);
+            Debug.Log("3 pressed");
+            GameObject _itemThree = Instantiate(_inventory[2], _cameraTrans);
             _itemThree.SetActive(true);
-            _itemThree.transform.SetParent(_cameraTrans);
-            _itemThree.transform.localPosition = new Vector3(0.4f, -0.4f, 0.7f);
             _itemOut = true;
-            Vector3 _correctPerspectiveThree = new Vector3(transform.position.x, transform.position.y, 0);
-            Quaternion rotate = Quaternion.Euler(_correctPerspectiveThree);
 
-            _itemThree.transform.SetLocalPositionAndRotation(_itemThree.transform.localPosition, rotate); 
+            _itemThree.transform.SetLocalPositionAndRotation(myPosition, myRotation);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3) && _itemOut == true)
         {

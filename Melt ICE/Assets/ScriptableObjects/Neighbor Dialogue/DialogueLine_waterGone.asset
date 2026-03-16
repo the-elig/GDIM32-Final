@@ -18,7 +18,7 @@ MonoBehaviour:
   - Anything else I can help you with?
   _playerReplyOptions:
   - Do you have any way to melt the ice?
-  - What's with the screaming birds?
+  - What's with the birds?
   - Thank you!
   _npcReplies:
   - {fileID: 11400000, guid: f9b42cc53c305b04c9ea369938468980, type: 2}
