@@ -118,7 +118,16 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             GameObject _itemOne = Instantiate(_inventory[0], _cameraTrans);
             _itemOne.SetActive(true);
             _itemOut = true;
-            
+
+            // if flamethrower, set different rotation
+            if (_itemOne.GetComponent<Item>().GetName() == "Flamethrower")
+            {
+                myPosition = new Vector3(0.657000005f, -0.4f, 0.690999985f);
+                myRotation = new Quaternion(-0.52504611f, -0.519083917f, -0.470709532f, 0.483022809f);
+
+                _itemOne.GetComponent<Collider>().enabled = false;
+            }
+
             _itemOne.transform.SetLocalPositionAndRotation(myPosition, myRotation);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == true)
