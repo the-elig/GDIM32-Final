@@ -81,6 +81,8 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
 
         transform.Translate(0, 0, forwardbackwards);
         transform.Translate(leftright, 0, 0);
+
+        // walk audio
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             Walked?.Invoke(true);
@@ -133,10 +135,13 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             _itemTwo.SetActive(true);
             _itemOut = true;
 
+            // if flamethrower, set different rotation
             if (_itemTwo.GetComponent<Item>().GetName() == "Flamethrower")
             {
                 myPosition = new Vector3(0.657000005f, -0.4f, 0.690999985f);
                 myRotation = new Quaternion(-0.52504611f, -0.519083917f, -0.470709532f, 0.483022809f);
+
+                _itemTwo.GetComponent<Collider>().enabled = false;
             }
 
             _itemTwo.transform.SetLocalPositionAndRotation(myPosition, myRotation);
@@ -150,15 +155,17 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
         // Item three spawn
         if (Input.GetKeyDown(KeyCode.Alpha3) && _inventory.Count >= 3 && _itemOut == false)
         {
-            Debug.Log("3 pressed");
             GameObject _itemThree = Instantiate(_inventory[2], _cameraTrans);
             _itemThree.SetActive(true);
             _itemOut = true;
 
+            // if flamethrower, set different position and turn off collider
             if (_itemThree.GetComponent<Item>().GetName() == "Flamethrower")
             {
                 myPosition = new Vector3(0.657000005f, -0.4f, 0.690999985f);
                 myRotation = new Quaternion(-0.52504611f, -0.519083917f, -0.470709532f, 0.483022809f);
+
+                _itemThree.GetComponent<Collider>().enabled = false;
             }
 
             _itemThree.transform.SetLocalPositionAndRotation(myPosition, myRotation);
@@ -202,6 +209,8 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
         _canMoveCamera = b;
     }
 
+    
+    
     //singleton stuff
     public static Player Instance { get; private set; }
     public Player _player { get; private set; }
