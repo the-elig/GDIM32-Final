@@ -21,10 +21,6 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text _option2;
     [SerializeField] private TMP_Text _option3;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
     // Start is called before the first frame update
     void Start()

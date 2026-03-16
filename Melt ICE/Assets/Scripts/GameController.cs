@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
     {
         // if in the correct scene and hasKey and the flamethrower hasn't been spawned
         if (SceneManager.GetActiveScene().name == "Main Scene"
-           && Player.Instance._inventoryString.Contains("Key") && !_spawnedFlamethrower)
+           && _dialogue._appear ==true && !_spawnedFlamethrower)
         {
             if (_flamethrower == null)
             {
