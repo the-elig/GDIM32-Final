@@ -29,7 +29,7 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
     private GameObject _itemOne;
     private GameObject _itemTwo;
     private GameObject _itemThree;
-    private bool _itemOut = false;
+    public bool _itemOut = false;
 
     private bool _canMoveCamera = true;
 
