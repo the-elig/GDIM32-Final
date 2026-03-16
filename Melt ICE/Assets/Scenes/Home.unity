@@ -527,6 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Home
   _hasInteracted: 0
   _sceneName: Home
   _position: {x: 2, y: 1, z: 3}
@@ -1554,6 +1555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Home
   _hasInteracted: 0
   _sceneName: Home
   _position: {x: 2, y: 1, z: 2}
@@ -3282,6 +3284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Main Scene
   _hasInteracted: 0
   _sceneName: Main Scene
   _position: {x: 15.93, y: 0.91, z: 17.78}
@@ -5787,6 +5790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Home
   _hasInteracted: 0
   _sceneName: Home
   _position: {x: 2, y: 1, z: 5}
@@ -8860,6 +8864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0900c5a4e96c80a49b188b29e33df819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
   _hasInteracted: 0
   _npcReaction: 0
   _playerHasKeyItem: 0
@@ -9179,8 +9184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66e8444760c0474da313dd54f729f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hasInteracted: 0
   _name: Cup
+  _hasInteracted: 0
   _prefab: {fileID: 3445420614483365243, guid: 5ce29ed4cad20a444be951ff9ff911a8, type: 3}
 --- !u!114 &4260456343397844512
 MonoBehaviour:

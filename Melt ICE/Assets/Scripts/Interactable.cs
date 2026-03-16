@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+    [SerializeField] public string _name;
     public bool _hasInteracted = false;
 
     private void Update()
@@ -13,6 +14,11 @@ public abstract class Interactable : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public string GetName()
+    {
+        return _name;
     }
 
 }

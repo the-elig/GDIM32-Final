@@ -79,30 +79,28 @@ public class GameController : MonoBehaviour
             // if the interactable is an item
             PickedUp?.Invoke();
 
-            float _time = 3.0f;
-            _time -= Time.deltaTime;
+            bool inventoryInteraction = true;
+
             Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
             Destroy(inter.gameObject); //remove from scene to prevent further interaction
             string _name = inter.GetComponent<Item>().GetName();
             Player.Instance._inventoryString.Add(_name);
+            
+            
+            // UI logic that should be in the UI controller but whatever
             UI._inventoryText.text = UI._inventoryText.text + $"\n{_name}";
 
-            if ( _time > 0 )
+            if (inventoryInteraction)
             {
                 UI._notifText.SetActive(true);
             }
-            else
-            {
-                UI._notifText.SetActive(false);
-            }
-
         }
         else if (inter.GetComponent<Door>() != null) // if the interactable is a door
         {
             // load correct scene
-            if (SceneManager.GetActiveScene().name != inter.GetComponent<Door>().GetSceneName())
+            if (SceneManager.GetActiveScene().name != inter.GetComponent<Door>().GetName())
             {
-                SceneManager.LoadScene(inter.GetComponent<Door>().GetSceneName());
+                SceneManager.LoadScene(inter.GetComponent<Door>().GetName());
             }
 
             // put in correct location

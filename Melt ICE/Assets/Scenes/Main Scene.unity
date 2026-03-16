@@ -368,7 +368,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childrensSpeed: 1
   _childrensComedicTiming: 3
-  _screaming: {fileID: 191000227}
   _popupDistance: 20
 --- !u!212 &191000226
 SpriteRenderer:
@@ -731,6 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde2984f4a99424ca9c1a9d3478d448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: Home
   _hasInteracted: 0
   _sceneName: Home
   _position: {x: -3, y: 1, z: 10.5}
@@ -920,7 +920,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childrensSpeed: 1
   _childrensComedicTiming: 3
-  _screaming: {fileID: 360036238}
   _popupDistance: 20
 --- !u!212 &360036237
 SpriteRenderer:
@@ -2814,7 +2813,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _childrensSpeed: 1
   _childrensComedicTiming: 3
-  _screaming: {fileID: 1481166885}
   _popupDistance: 20
 --- !u!212 &1481166884
 SpriteRenderer:
@@ -13898,6 +13896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0900c5a4e96c80a49b188b29e33df819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
   _hasInteracted: 0
   _npcReaction: 0
   _playerHasKeyItem: 0
@@ -14054,8 +14053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66e8444760c0474da313dd54f729f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hasInteracted: 0
   _name: Key
+  _hasInteracted: 0
   _prefab: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
 --- !u!1 &5336631094966681873
 GameObject:
@@ -14176,8 +14175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66e8444760c0474da313dd54f729f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hasInteracted: 0
   _name: Flamethrower
+  _hasInteracted: 0
   _prefab: {fileID: 400441669779297843, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
 --- !u!1 &7994436290852758207
 GameObject:

@@ -31,7 +31,6 @@ public class NPC : Interactable
     private void Start()
     {
         _dControl = FindObjectOfType<DialogueController>().GetComponent<DialogueController>();
-
     }
 
     void Update()
