@@ -529,7 +529,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Home
   _hasInteracted: 0
-  _sceneName: Home
   _position: {x: 2, y: 1, z: 3}
 --- !u!1001 &89336161
 PrefabInstance:
@@ -1557,7 +1556,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Home
   _hasInteracted: 0
-  _sceneName: Home
   _position: {x: 2, y: 1, z: 2}
 --- !u!1 &376892320 stripped
 GameObject:
@@ -3286,7 +3284,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Main Scene
   _hasInteracted: 0
-  _sceneName: Main Scene
   _position: {x: 15.93, y: 0.91, z: 17.78}
 --- !u!65 &816586387
 BoxCollider:
@@ -5792,7 +5789,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Home
   _hasInteracted: 0
-  _sceneName: Home
   _position: {x: 2, y: 1, z: 5}
 --- !u!1001 &1439619322
 PrefabInstance:
@@ -8864,7 +8860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0900c5a4e96c80a49b188b29e33df819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: Sister
   _hasInteracted: 0
   _npcReaction: 0
   _playerHasKeyItem: 0
@@ -8873,6 +8869,7 @@ MonoBehaviour:
   _dialogueStartingNodes:
   - {fileID: 11400000, guid: f88057a96bb01f94bb8d56c0fef36867, type: 2}
   - {fileID: 11400000, guid: 97bbb4fb56c7b8048a0143e039ee5984, type: 2}
+  - {fileID: 11400000, guid: c43b39d86f4b86a4ca85b00f7ea2703e, type: 2}
   _awareDistance: 6
   _playerDistance: 0
   _animator: {fileID: 2093899951}

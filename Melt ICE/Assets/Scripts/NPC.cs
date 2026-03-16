@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public enum NPCSpeech
 {
     Idle, Aware, Talking
-
 }
 
 public class NPC : Interactable

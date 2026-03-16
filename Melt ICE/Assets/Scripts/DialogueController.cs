@@ -17,7 +17,13 @@ public class DialogueController : MonoBehaviour
     {
         _currentNPC = npc;
 
-        if (_currentNPC._playerHasKeyItem)
+        if (_currentNPC.GetName() == "Sister" //end condition
+            && Player.Instance._inventoryString.Contains("Puddle")
+            && Player.Instance._inventoryString.Contains("Cup"))
+        {
+            _dialogueStartNode = _currentNPC._dialogueStartingNodes[2];
+        }
+        else if (_currentNPC._playerHasKeyItem)
         {
             Debug.Log("player has key item for npc");
             _dialogueStartNode = _currentNPC._dialogueStartingNodes[1];

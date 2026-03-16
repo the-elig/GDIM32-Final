@@ -732,7 +732,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Home
   _hasInteracted: 0
-  _sceneName: Home
   _position: {x: -3, y: 1, z: 10.5}
 --- !u!65 &283651539
 BoxCollider:
@@ -13896,7 +13895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0900c5a4e96c80a49b188b29e33df819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
+  _name: Neighbor
   _hasInteracted: 0
   _npcReaction: 0
   _playerHasKeyItem: 0

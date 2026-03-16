@@ -102,13 +102,6 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             Interacted?.Invoke(inter);
         }
 
-
-        if (_inventoryString.Contains("Puddle") && _inventoryString.Contains("Cup"))
-        {
-            _inventoryString[_inventoryString.IndexOf("Cup")] = "Full Cup";
-        }
-
-
         EquippedItem();
     }
 
