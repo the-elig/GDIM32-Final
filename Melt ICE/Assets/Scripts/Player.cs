@@ -133,6 +133,12 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             _itemTwo.SetActive(true);
             _itemOut = true;
 
+            if (_itemTwo.GetComponent<Item>().GetName() == "Flamethrower")
+            {
+                myPosition = new Vector3(0.657000005f, -0.4f, 0.690999985f);
+                myRotation = new Quaternion(-0.52504611f, -0.519083917f, -0.470709532f, 0.483022809f);
+            }
+
             _itemTwo.transform.SetLocalPositionAndRotation(myPosition, myRotation);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == true)
@@ -148,6 +154,12 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             GameObject _itemThree = Instantiate(_inventory[2], _cameraTrans);
             _itemThree.SetActive(true);
             _itemOut = true;
+
+            if (_itemThree.GetComponent<Item>().GetName() == "Flamethrower")
+            {
+                myPosition = new Vector3(0.657000005f, -0.4f, 0.690999985f);
+                myRotation = new Quaternion(-0.52504611f, -0.519083917f, -0.470709532f, 0.483022809f);
+            }
 
             _itemThree.transform.SetLocalPositionAndRotation(myPosition, myRotation);
         }
