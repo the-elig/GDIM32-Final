@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI: {fileID: 659955869}
   _dialogue: {fileID: 70136641}
-  _flamethrower: {fileID: 400441669779297843, guid: 886c4a6db116e3b48928caa3f5cd733f, type: 3}
+  _flamethrower: {fileID: 0}
   _waterPuddle: {fileID: 5281440334952667464, guid: dce6fbdf169ca49b2a506cf280ce1b58, type: 3}
 --- !u!4 &70136636
 Transform:

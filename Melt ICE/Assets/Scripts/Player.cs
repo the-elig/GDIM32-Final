@@ -201,6 +201,8 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
     //singleton stuff
     public static Player Instance { get; private set; }
     public Player _player { get; private set; }
+    public ScreamingChildren _childInstance {get; private set; }
+    public ScreamingChildren _screamingChildren {get; private set; }
     private void Awake()
     {
         if (Instance != null && Instance != this)
