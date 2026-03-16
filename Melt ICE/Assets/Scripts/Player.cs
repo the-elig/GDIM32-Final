@@ -119,22 +119,13 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             _itemOut = true;
             
             _itemOne.transform.SetLocalPositionAndRotation(myPosition, myRotation);
-
-
-            //if(_itemOne.name == "FlameThrower")
-            //{
-            //Vector3 _correctPerspective = new Vector3(transform.rotation.x, 0, 0);
-            //Quaternion rotate = Quaternion.Euler(_correctPerspective);
-            //_itemOne.transform.eulerAngles = new Vector3(transform.localEulerAngles.x, 0, 0);
-            //_itemOne.transform.SetLocalPositionAndRotation(_itemOne.transform.localPosition, rotate);
-
-            //}
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1) && _itemOut == true)
         {
             Destroy(GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).gameObject);
             _itemOut = false;
         }
+
         // Item two spawn
         if (Input.GetKeyDown(KeyCode.Alpha2) && _inventory.Count >= 2 && _itemOut == false)
         {
@@ -149,6 +140,7 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             Destroy(GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).gameObject);
             _itemOut = false;
         }
+
         // Item three spawn
         if (Input.GetKeyDown(KeyCode.Alpha3) && _inventory.Count >= 3 && _itemOut == false)
         {
