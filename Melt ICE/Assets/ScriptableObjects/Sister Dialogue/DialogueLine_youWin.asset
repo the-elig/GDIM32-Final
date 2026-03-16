@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Sister
   _lines:
-  - Thanks for the water!
-  - You win!
+  - That's just... A solid puddle in your pocket- it's not even in the cup... But
+    uh- If that the only thing you could find then like, I'll still take it...?
+  - Good job bro, thanks, you can like... go back to what you were doing before I
+    asked for water or whatevs-
   _playerReplyOptions: []
   _npcReplies: []

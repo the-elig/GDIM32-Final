@@ -8517,7 +8517,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[I] for inventory
 
-    [1] to equip
+    [1 - 3] to equip
 
 '
   m_isRightToLeft: 0

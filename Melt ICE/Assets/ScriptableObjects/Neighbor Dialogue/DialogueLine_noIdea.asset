@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: 
   _lines:
-  - I have no idea what you're talking about.
+  - Birds? How DARE you, those are my beautiful well behaved babies... My bundles
+    of absolute JOY, I am a proud parent of those threee ANGELS.
   - Anything else I can help you with?
   _playerReplyOptions:
   - My sister wants some water and I can't find any.
