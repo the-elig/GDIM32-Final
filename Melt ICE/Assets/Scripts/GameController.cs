@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
 
     public delegate void PickedUpDelegate();
     public event PickedUpDelegate PickedUp;
+    
    
 
     void Start()
@@ -33,13 +34,18 @@ public class GameController : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Main Scene"
            && Player.Instance._inventoryString.Contains("Key") && !_spawnedFlamethrower)
         {
-           // manual positioning of the flamethrower in the scene
-            Vector3 myPosition = new Vector3(65.6100006f, 0.200000003f, 48.5099983f);
-            Quaternion myRotation = new Quaternion(-0.280872971f, -0.648930192f, -0.648930192f, 0.28087303f);
+            if (_flamethrower == null)
+            {
+                _flamethrower = GameObject.Find("FlameThrower");
+                // manual positioning of the flamethrower in the scene
+                Vector3 myPosition = new Vector3(65.6100006f, 0.200000003f, 48.5099983f);
+                //Quaternion myRotation = new Quaternion(-0.280872971f, -0.648930192f, -0.648930192f, 0.28087303f);
+                _flamethrower.transform.position = myPosition;
+                //Instantiate(_flamethrower, myPosition, myRotation);
 
-            Instantiate(_flamethrower, myPosition, myRotation);
-
-            _spawnedFlamethrower = true;
+                _spawnedFlamethrower = true;   
+            }
+            
         }
         for (int i = 0; i < Player.Instance._inventoryString.Count ; i++)
         {
