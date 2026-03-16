@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66e8444760c0474da313dd54f729f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hasInteracted: 0
   _name: Flamethrower
   _prefab: {fileID: 400441669779297843}
 --- !u!136 &1585999583113036234
@@ -85,8 +86,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c254f54087c50554a95434cec647bc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flame: {fileID: 8992718440066780665}
-  _ice: {fileID: 0}
   _gc: {fileID: 0}
 --- !u!1 &2409658159707436445
 GameObject:
@@ -9868,6 +9867,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c254f54087c50554a95434cec647bc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flame: {fileID: 0}
-  _ice: {fileID: 0}
   _gc: {fileID: 0}
