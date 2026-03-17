@@ -373,8 +373,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactText: {fileID: 1897438932}
   _inventoryText: {fileID: 1500073108}
+  _notifText: {fileID: 0}
   _inventorybox: {fileID: 725419864}
-  _notifText: {fileID: 2050174336}
+  _notifBox: {fileID: 0}
   _dialogueBox: {fileID: 522901541}
   _npcText: {fileID: 915020123}
   _playerOptions: {fileID: 949452333}
@@ -505,6 +506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogue: {fileID: 70136638}
   _currentNPC: {fileID: 0}
+  _key: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
+  _appear: 0
 --- !u!1 &77809020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d71cb879c2611844faa13bd49e4a284c, type: 3}
@@ -2621,8 +2624,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactText: {fileID: 1897438932}
   _inventoryText: {fileID: 1500073108}
+  _notifText: {fileID: 2050174337}
   _inventorybox: {fileID: 725419864}
-  _notifText: {fileID: 2050174336}
+  _notifBox: {fileID: 2050174336}
   _dialogueBox: {fileID: 522901541}
   _npcText: {fileID: 915020123}
   _playerOptions: {fileID: 949452333}
@@ -2800,6 +2804,7 @@ MonoBehaviour:
   UI: {fileID: 659955869}
   _spawnUp: 1
   _spawnRight: -0.2
+  _itemOut: 0
   _inventory: []
   _inventoryString: []
 --- !u!82 &696282165
