@@ -153,6 +153,7 @@ public class Player : MonoBehaviour //THIS IS OUR SINGLETON
             }
 
             _itemTwo.transform.SetLocalPositionAndRotation(myPosition, myRotation);
+
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && _itemOut == true)
         {

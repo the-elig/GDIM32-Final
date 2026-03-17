@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.LightingExplorerTableColumn;
@@ -78,22 +79,32 @@ public class GameController : MonoBehaviour
         {
             // if the interactable is an item
             PickedUp?.Invoke();
-
             bool inventoryInteraction = true;
-
-            Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
-            Destroy(inter.gameObject); //remove from scene to prevent further interaction
-            string _name = inter.GetComponent<Item>().GetName();
-            Player.Instance._inventoryString.Add(_name);
-            
-            
-            // UI logic that should be in the UI controller but whatever
-            UI._inventoryText.text = UI._inventoryText.text + $"\n{_name}";
-
             if (inventoryInteraction)
             {
-                UI._notifText.SetActive(true);
+                UI._notifBox.SetActive(true);
             }
+            if (inter.gameObject.GetComponent<Item>().GetName() == "Puddle")
+            {
+                string _notif = UI._notifText.text.ToString();
+                UI._notifText.text = UI._notifText.text.Replace(_notif, "Your pocket is full of water now...");
+                string _name = inter.GetComponent<Item>().GetName();
+                Player.Instance._inventoryString.Add(_name);
+                UI._inventoryText.text = UI._inventoryText.text + $"\n{_name}";
+                Destroy(inter.gameObject);
+            }
+            else
+            {
+                Player.Instance._inventory.Add(inter.GetComponent<Item>().GetPrefab()); //add to inventory
+                Destroy(inter.gameObject); //remove from scene to prevent further interaction
+                string _name = inter.GetComponent<Item>().GetName();
+                Player.Instance._inventoryString.Add(_name);
+
+
+                // UI logic that should be in the UI controller but whatever
+                UI._inventoryText.text = UI._inventoryText.text + $"\n{_name}";
+            }
+
         }
         else if (inter.GetComponent<Door>() != null) // if the interactable is a door
         {

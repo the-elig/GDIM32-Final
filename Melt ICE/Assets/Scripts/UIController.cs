@@ -9,8 +9,9 @@ public class UIController : MonoBehaviour
     // basic UI
     [SerializeField] private TMP_Text _interactText;
     [SerializeField] public TMP_Text _inventoryText;
+    [SerializeField] public TMP_Text _notifText;
     [SerializeField] private GameObject _inventorybox;
-    [SerializeField] public GameObject _notifText;
+    [SerializeField] public GameObject _notifBox;
     private bool _boxActive = false;
 
     // dialogue UI
