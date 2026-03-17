@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.LightingExplorerTableColumn;
+//using static UnityEditor.LightingExplorerTableColumn;
 public enum _objective
 {
     empty, cup, key, flamethrower

@@ -2796,7 +2796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab2c05442975c141b6bb1195b4bcf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
+  _moveSpeed: 4
   _turnSpeed: 3
   _mouseSensitivity: 3
   _interactDistance: 3
@@ -8522,7 +8522,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[I] for inventory
 
-    [1 - 3] to equip
+    [1 - 2] to equip
 
 '
   m_isRightToLeft: 0
