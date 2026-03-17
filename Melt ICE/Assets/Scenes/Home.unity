@@ -2797,7 +2797,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 4
+
   _turnSpeed: 2
+
+
   _mouseSensitivity: 3
   _interactDistance: 3
   _interactText: {fileID: 1897438930}
@@ -8422,7 +8425,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[I] for inventory
 
-    [1 - 3] to equip
+    [1 - 2] to equip
 
 '
   m_isRightToLeft: 0
