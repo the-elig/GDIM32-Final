@@ -2797,14 +2797,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 4
-
   _turnSpeed: 2
-
-
   _mouseSensitivity: 3
   _interactDistance: 3
   _interactText: {fileID: 1897438930}
-  UI: {fileID: 659955869}
+  UI: {fileID: 70136638}
   _spawnUp: 1
   _spawnRight: -0.2
   _itemOut: 0
